@@ -1,0 +1,9 @@
+#%Module1.0
+
+prereq .system
+
+set v 3.9
+
+prepend-path PYTHONPATH [home]/[osrelease]/lib/python$v/site-packages
+prepend-path PYTHONPATH [home]/[osrelease]/lib64/python$v/site-packages
+

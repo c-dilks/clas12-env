@@ -1,0 +1,6 @@
+#%Module1.0
+
+set version 3.29.0
+
+prepend-path PATH [home]/[osrelease]/local/cmake/$version/bin
+

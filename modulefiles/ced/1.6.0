@@ -1,0 +1,4 @@
+#%Module1.0
+
+prepend-path PATH [home]/noarch/ced/1.6.0
+
