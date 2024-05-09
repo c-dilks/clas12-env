@@ -7,8 +7,6 @@ prereq qadb
 prereq hipo
 prereq root
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
-
 setenv CLAS12ROOT [home]/[osrelease]/local/clas12root/$version/[getvenv HIPO]
 
 prepend-path PATH $env(CLAS12ROOT)/bin

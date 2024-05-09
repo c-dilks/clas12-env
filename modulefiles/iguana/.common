@@ -6,7 +6,6 @@ prereq pymods
 
 conflict iguana
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
 set d [home]/[osrelease]/local/iguana/$version/[getvenv HIPO]
 
 prepend-path PATH $d/bin

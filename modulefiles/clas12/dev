@@ -4,7 +4,7 @@ prereq .system
 
 # scicomp:
 prereq --optional cernlib/2023
-prereq --optional julia/1.9.4
+prereq --optional julia/1.10.2
 
 # java:
 prereq --optional jdk/17.0.2

@@ -3,7 +3,6 @@
 prereq .system
 prereq hipo
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
 set d [home]/[osrelease]/local/driftchambers/$version/[getvenv HIPO]
 
 prepend-path PATH $d/bin
