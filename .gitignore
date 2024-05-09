@@ -3,3 +3,8 @@
 *bak
 *BAK
 .*
+noarch
+linux*
+alma*
+rhel9*
+macos*
