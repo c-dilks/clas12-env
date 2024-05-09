@@ -1,19 +1,4 @@
 
-# system module initialization for non-login shells:
-if ( -e /etc/profile.d/modules.csh ) then
-    source /etc/profile.d/modules.csh
-endif
-
-# add scicomp modulefiles:
-if ( -e /etc/redhat-release ) then
-    if ( -e /cvmfs/oasis.opensciencegrid.org ) then
-        grep -q -i -e Alma -e Plow /etc/redhat-release
-        if ( $? == 0 ) then
-            module use -a /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
-        endif
-    endif
-endif
-
 # get the full path of the directory containing this file:
 set ARGS=($_)
 set LSOF=`env PATH=/usr/sbin:${PATH} which lsof`
@@ -40,21 +25,36 @@ else
    else if ( "$1" != "" ) then
       if ( -e ${1}/setup.csh ) then
          set home=${1}
-      else
-         echo "setup.csh: ${1} does not contain a clas12 installation"
       endif
    else
-      echo 'Error: The call to "source where_clas12_is/setup.csh" can not determine the location of the CLAS12 installation'
-      echo "because it was embedded another script (this is an issue specific to csh)."
-      echo "Use either:"
-      echo "   cd where_clas12_is; source setup.csh"
-      echo "or"
-      echo "   source where_clas12_is/setup.csh where_clas12_is"
    endif
 endif
 
-if ($?home) then
+if ( ($?home) && (-d $home/modulefiles) ) then
+    # system module initialization for non-login shells:
+    if ( -e /etc/profile.d/modules.csh ) then
+        source /etc/profile.d/modules.csh
+    endif
+
+    # add scicomp modulefiles:
+    if ( -e /etc/redhat-release ) then
+        if ( -e /cvmfs/oasis.opensciencegrid.org ) then
+            grep -q -i -e Alma -e Plow /etc/redhat-release
+            if ( $? == 0 ) then
+                module use /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
+            endif
+        endif
+    endif
+
+    # add clas12 modulefiles:
     module use $home/modulefiles
     module config extra_siteconfig $home/util/modulefiles.tcl
+else
+    echo 'ERROR: could not find $CLAS12_HOME.  Note, if you are sourcing this'
+    echo 'from another tcsh script, you need to either pass the full path as'
+    echo 'an additional argument or cd to the directory of setup.csh:'
+    echo 'A. source /path/to/setup.csh /path/to/setup.csh'
+    echo 'B. cd /path/to && source ./setup.csh'
 endif
+
 
