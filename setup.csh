@@ -7,30 +7,30 @@ if ( "$thisfile" == "" ) then
    set thisfile=/does/not/exist
 endif
 if ( "$thisfile" != "" && -e ${thisfile} ) then
-   set home="`dirname ${thisfile}`"
+   set clas12_home="`dirname ${thisfile}`"
 else if ("$1" != "") then
     # for scripted "source /path/to/this/script /path/to/this/script":
    if ( -d "$1" ) then
-       set home="$1"
+       set clas12_home="$1"
    else if ( -f "$1" ) then
-       set home="`dirname $1`"
+       set clas12_home="`dirname $1`"
    endif
 else if ("$ARGS" != "") then
    # for interactive, direct "source /path/to/this/script":
    set thisfile=`echo $ARGS | awk '{print$2}'`
-   set home="`dirname ${thisfile}`"
+   set clas12_home="`dirname ${thisfile}`"
 else
    if ( -e setup.csh ) then
-      set home=${PWD}
+      set clas12_home=${PWD}
    else if ( "$1" != "" ) then
       if ( -e ${1}/setup.csh ) then
-         set home=${1}
+         set clas12_home=${1}
       endif
    else
    endif
 endif
 
-if ( ($?home) && (-d $home/modulefiles) ) then
+if ( ($?clas12_home) && (-d $clas12_home/modulefiles) ) then
     # system module initialization for non-login shells:
     if ( -e /etc/profile.d/modules.csh ) then
         source /etc/profile.d/modules.csh
@@ -47,8 +47,8 @@ if ( ($?home) && (-d $home/modulefiles) ) then
     endif
 
     # add clas12 modulefiles:
-    module use $home/modulefiles
-    module config extra_siteconfig $home/util/modulefiles.tcl
+    module use $clas12_home/modulefiles
+    module config extra_siteconfig $clas12_home/util/modulefiles.tcl
 else
     echo 'ERROR: could not find $CLAS12_HOME.  Note, if you are sourcing this'
     echo 'from another tcsh script, you need to either pass the full path as'
