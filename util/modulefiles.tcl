@@ -1,7 +1,7 @@
 
 # append site-specific procedures referenced in the g_siteProcsToExposeToItrp
 # variable defined below to the list of procedures exposed in the modulefile
-# and modulerc evaluation interpreters
+# and modulerc evaluation interpreters:
 proc addSiteProcsToItrpAliasList {itrpaliasvname keyname args} {
    # ensure this proc is only called once at itrpaliasvname initialization
    trace remove variable $itrpaliasvname write addSiteProcsToItrpAliasList
@@ -18,10 +18,10 @@ proc addSiteProcsToItrpAliasList {itrpaliasvname keyname args} {
 trace add variable ::g_modfileBaseAliases write addSiteProcsToItrpAliasList
 trace add variable ::g_modrcAliases write addSiteProcsToItrpAliasList
 
-# Define here site-specific procedures that should be exposed to modulefile
-# and modulerc interpreter contexts
+# define here site-specific procedures that should be exposed to modulefile
+# and modulerc interpreter contexts:
 
-# Get an environment variable, with a default if it doesn't exist.
+# get an environment variable, with a default if it doesn't exist:
 proc getenv {name default} {
     global env
     if { [ info exists env($name) ] } {
@@ -30,20 +30,21 @@ proc getenv {name default} {
     return $default
 }
 
-# Get version number from a path-like environment variable, assuming
-# the basename is a version number and with a default of "$k".
-proc getvenv {path} {
-    return [ exec basename [getenv $path \$$path] ] 
+# get the basename of the value of a path-like environment variable, which
+# will commonly be a version number, with a default of "$name":
+proc getvenv {name} {
+    return [ exec basename [getenv $name \$$name] ] 
 }
 
-# Get the full, normlized path to the directory containing this tcl script:
+# get the full, normlized path to the directory containing this tcl script:
 proc home {} {
     set x [ dict get [info frame 0] file ]
     return [ file normalize [exec dirname $x]/.. ]
 }
 
-# Get the $OSRELEASE environment variable if it exists, else
+# get the $OSRELEASE environment variable if it exists, else
 # run our script to get what it will become upon loading modules:
+# (Note, we don't use our getenv here for performance reasons.)
 proc osrelease {} {
     global env
     if { [ info exists env(OSRELEASE) ] } {
@@ -53,6 +54,6 @@ proc osrelease {} {
 }
 
 # list all site-specific procedures to expose to modulefile and modulerc
-# interpreter contexts
+# interpreter contexts:
 set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease]
 
