@@ -45,11 +45,7 @@ proc home {} {
 # Get the $OSRELEASE environment variable if it exists, else
 # run our script to get what it will become upon loading modules:
 proc osrelease {} {
-    global env
-    if { [ info exists env(OSRELEASE) ] } {
-        return $env(OSRELEASE)
-    }
-    return [ exec [home]/util/osrelease.py ]
+    return [ getenv OSRELEASE [exec [home]/util/osrelease.py] ]
 }
 
 # list all site-specific procedures to expose to modulefile and modulerc
