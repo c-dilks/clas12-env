@@ -6,7 +6,10 @@ prereq pymods
 
 conflict iguana
 
-set d [home]/[osrelease]/local/iguana/$version/[getvenv HIPO]
+set v [getvenv HIPO]
+set d [home]/[osrelease]/local/iguana/$version/$v
+
+warnexist $d "iguana/$version is not built for hipo/$v"
 
 prepend-path PATH $d/bin
 prepend-path LD_LIBRARY_PATH $d/lib

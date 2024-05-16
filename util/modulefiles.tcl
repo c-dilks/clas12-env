@@ -53,6 +53,13 @@ proc osrelease {} {
     return [ exec [home]/util/osrelease.py ]
 }
 
+# print a warning message if a path doesn't exist:
+proc warnexist {path msg} {
+    if {! [file isdirectory $path ] } {
+        puts stderr "WARNING:  $msg"
+    }
+}
+
 # list all site-specific procedures to expose to modulefile and modulerc
 # interpreter contexts:
 set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease]
