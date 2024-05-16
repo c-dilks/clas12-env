@@ -62,5 +62,5 @@ proc warnexist {path msg} {
 
 # list all site-specific procedures to expose to modulefile and modulerc
 # interpreter contexts:
-set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease]
+set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease warnexist]
 
