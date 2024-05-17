@@ -10,7 +10,7 @@ set version 0.4.1
 set v [getvenv HIPO]
 set d [home]/[osrelease]/local/iguana/$version/$v
 
-warndir $d "iguana/$version is not built for hipo/$v"
+warndir $d "iguana/$version is not available for hipo/$v"
 
 prepend-path PATH $d/bin
 prepend-path LD_LIBRARY_PATH $d/lib

@@ -7,7 +7,10 @@ prereq qadb
 prereq hipo
 prereq root
 
-setenv CLAS12ROOT [home]/[osrelease]/local/clas12root/$version/[getvenv HIPO]
+set v [getvenv HIPO]
+setenv CLAS12ROOT [home]/[osrelease]/local/clas12root/$version/$v
+
+warndir $env(CLAS12ROOT) "clas12root/$version is not available for hipo/$v"
 
 prepend-path PATH $env(CLAS12ROOT)/bin
 prepend-path LD_LIBRARY_PATH $env(CLAS12ROOT)/lib
