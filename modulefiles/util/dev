@@ -1,3 +1,8 @@
 #%Module1.0
 
+prereq ccdb
+prereq rcdb
+prereq pymods
+
 prepend-path PATH [home]/noarch/clas12-utilities/dev/bin
+
