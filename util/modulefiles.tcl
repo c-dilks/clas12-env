@@ -57,7 +57,7 @@ proc osrelease {} {
 proc warndir {path msg} {
     if [module-info mode load] {
         if {! [file isdirectory $path ] } {
-            puts stderr "WARNING:  $msg"
+            puts stderr "\033\[1;33mWARNING:\033\[0m  $msg"
         }
     }
 }
