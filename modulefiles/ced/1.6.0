@@ -1,4 +1,6 @@
 #%Module1.0
 
+module-whatis {https://userweb.jlab.org/~heddle/ced}
+
 prepend-path PATH [home]/noarch/ced/1.6.0
 

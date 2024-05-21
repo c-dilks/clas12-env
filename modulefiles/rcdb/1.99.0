@@ -1,5 +1,7 @@
 #%Module1.0
 
+module-whatis {https://github.com/baltzell/rcdb/releases/tag/v1.99.0}
+
 prereq pymods
 
 set v 1.99.0

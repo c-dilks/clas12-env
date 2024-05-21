@@ -1,5 +1,7 @@
 #%Module1.0
 
+module-whatis {https://github.com/jeffersonlab/coatjava}
+
 setenv COATJAVA [home]/noarch/coatjava/${coatjava}
 setenv CLAS12DIR [home]/noarch/coatjava/${coatjava}
 setenv CLARA_HOME [home]/noarch/clara/${clara}_${coatjava}

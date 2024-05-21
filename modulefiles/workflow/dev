@@ -1,5 +1,7 @@
 #%Module1.0
 
+module-whatis {https://github.com/baltzell/clas12-workflow}
+
 prereq ccdb
 prereq rcdb
 prereq root
