@@ -1,0 +1,25 @@
+#%Module5.1
+
+# find an alternative for /tmp (e.g., when it's mounted noexec)
+
+proc tmp {tmpdir} {
+    if { [file isdirectory $tmpdir] } {
+        setenv TMPDIR $tmpdir
+        setenv APPTAINER_CACHEDIR $tmpdir/apptainer.cache
+        setenv APPTAINER_TMPDIR $tmpdir/apptainer.tmp
+        append-path --delim " " MAVEN_OPTS -Dmaven.repo.local=$tmpdir/maven.m2
+        append-path --delim " " MAVEN_OPTS -Djansi.tmpdir=$tmpdir/jansi.tmpdir
+        return 1
+    } else {
+        return 0
+    }
+}
+
+
+if {! [tmp /scratch/$env(USER)/tmp] == 1 } {
+    if {! [tmp [getenv SLURM_JOB_WORK_DIR /work/clas12/users/$env(USER)/tmp ] ] } {
+        puts stderr "\033\[1;33mERROR:\033\[0m  Could not find a tmpdir."
+        exit
+    }
+}
+
