@@ -6,7 +6,7 @@ import platform
 if platform.system() == 'Darwin':
     compiler = os.popen('clang --version').readlines()[0].split()[3]
     compiler = 'clang' + compiler.split('.')[0]
-    os_version = 'macosx' + platform.mac_ver().pop(0).split('.').pop(0)
+    os_version = 'macosx' + list(platform.mac_ver()).pop(0).split('.').pop(0)
 
 elif platform.system() == 'Linux':
 
