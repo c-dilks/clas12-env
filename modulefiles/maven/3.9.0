@@ -1,4 +1,6 @@
 #%Module1.0
+module-whatis {https://maven.apache.org/}
+
 conflict maven
 
 set version 3.9.0
