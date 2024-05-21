@@ -1,5 +1,7 @@
 #%Module1.0
 
+module-whatis {access to geant4 modulefiles}
+
 setenv SIM_HOME /cvmfs/oasis.opensciencegrid.org/jlab/geant4
 module use -a $env(SIM_HOME)/ceInstall/modulefiles
 

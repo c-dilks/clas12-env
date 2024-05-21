@@ -1,5 +1,7 @@
 #%Module5.3
 
+module-whatis {core environment variables and some common, 3rd party dependencies}
+
 setenv CLAS12_HOME [home]
 setenv OSRELEASE [osrelease]
 

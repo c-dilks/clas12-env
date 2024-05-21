@@ -1,6 +1,6 @@
 #%Module5.1
 
-# find an alternative for /tmp (e.g., when it's mounted noexec)
+module-whatis {find an alternative for /tmp (e.g., when it's mounted noexec)}
 
 proc tmp {tmpdir} {
     if { [file isdirectory $tmpdir] } {
