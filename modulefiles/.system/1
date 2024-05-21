@@ -3,6 +3,8 @@
 setenv CLAS12_HOME [home]
 setenv OSRELEASE [osrelease]
 
+warndir $env(CLAS12_HOME)/$env(OSRELEASE) "$env(OSRELEASE) is currently not supported."
+
 prepend-path PATH $env(CLAS12_HOME)/$env(OSRELEASE)/bin
 prepend-path LD_LIBRARY_PATH $env(CLAS12_HOME)/$env(OSRELEASE)/lib
 prepend-path LD_LIBRARY_PATH $env(CLAS12_HOME)/$env(OSRELEASE)/lib64
