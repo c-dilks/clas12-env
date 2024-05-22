@@ -1,6 +1,6 @@
 #%Module1.0
 
-module-whatis {https://github.com/jeffersonlab/clas12root}
+module-whatis https://github.com/jeffersonlab/clas12root
 
 prereq .system
 

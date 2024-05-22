@@ -1,6 +1,6 @@
 #%Module1.0
 
-module-whatis {https://github.com/jeffersonlab/clas12-timeline}
+module-whatis https://github.com/jeffersonlab/clas12-timeline
 
 prereq rcdb
 prereq groovy/4.0.3

@@ -1,6 +1,6 @@
 #%Module1.0
 
-module-whatis {https://root.cern.ch}
+module-whatis https://root.cern.ch
 
 prereq .system
 
