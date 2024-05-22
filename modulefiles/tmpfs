@@ -2,24 +2,31 @@
 
 module-whatis {find an alternative for /tmp (e.g., when it's mounted noexec)}
 
-proc tmp {tmpdir} {
-    if { [file isdirectory $tmpdir] && [file writable $tmpdir] } {
-        setenv TMPDIR $tmpdir
-        setenv APPTAINER_CACHEDIR $tmpdir/apptainer.cache
-        setenv APPTAINER_TMPDIR $tmpdir/apptainer.tmp
-        append-path --delim " " MAVEN_OPTS -Dmaven.repo.local=$tmpdir/maven.m2
-        append-path --delim " " MAVEN_OPTS -Djansi.tmpdir=$tmpdir/jansi.tmpdir
-        return 1
-    } else {
-        return 0
+set failed {}
+
+proc settmp {tmpdir} {
+    global failed
+    if { $tmpdir != "" } {
+        if { [file isdirectory $tmpdir] && [file writable $tmpdir] } {
+            setenv TMPDIR $tmpdir
+            setenv APPTAINER_CACHEDIR $tmpdir/apptainer.cache
+            setenv APPTAINER_TMPDIR $tmpdir/apptainer.tmp
+            append-path --delim " " MAVEN_OPTS -Dmaven.repo.local=$tmpdir/maven.m2
+            append-path --delim " " MAVEN_OPTS -Djansi.tmpdir=$tmpdir/jansi.tmpdir
+            return 1
+        }
+        lappend failed $tmpdir
     }
+    return 0
 }
 
-
-if {! [tmp /scratch/$env(USER)/tmp] == 1 } {
-    if {! [tmp [getenv SLURM_JOB_WORK_DIR /work/clas12/users/$env(USER)/tmp ] ] } {
-        puts stderr "\033\[1;33mERROR:\033\[0m  Could not find a tmpdir."
-        exit
+if {! [settmp /scratch/$env(USER)/tmp] } {
+    if {! [settmp [getenv SLURM_JOB_WORK_DIR {}]] } {
+        if {! [settmp /work/clas12/users/$env(USER)/tmp ] } {
+            puts stderr "\033\[1;31mERROR:\033\[0m  Could not find a /tmp replacement at any of:"
+            puts stderr \t[join $failed \n\t]
+            exit
+        }
     }
 }
 
