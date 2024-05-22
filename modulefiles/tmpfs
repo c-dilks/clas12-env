@@ -3,7 +3,7 @@
 module-whatis {find an alternative for /tmp (e.g., when it's mounted noexec)}
 
 proc tmp {tmpdir} {
-    if { [file isdirectory $tmpdir] } {
+    if { [file isdirectory $tmpdir] && [file writable $tmpdir] } {
         setenv TMPDIR $tmpdir
         setenv APPTAINER_CACHEDIR $tmpdir/apptainer.cache
         setenv APPTAINER_TMPDIR $tmpdir/apptainer.tmp
