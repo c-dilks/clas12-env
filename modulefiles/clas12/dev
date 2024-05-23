@@ -1,5 +1,7 @@
 #%Module1.0
 
+module-whatis full clas12 environment, https://github.com/jeffersonlab/clas12-env
+
 prereq .system
 
 # scicomp:
@@ -32,5 +34,5 @@ prereq --optional util
 
 # gemc:
 prereq --optional geant4
-#prereq --optional gemc/5.7
+#prereq --optional gemc/5.9
 
