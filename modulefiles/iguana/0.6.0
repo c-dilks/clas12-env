@@ -12,10 +12,9 @@ set d [home]/[osrelease]/local/iguana/$version/$v
 
 warndir $d "iguana/$version is not available for hipo/$v"
 
+setenv IGUANA $d
 prepend-path PATH $d/bin
 prepend-path LD_LIBRARY_PATH $d/lib
 prepend-path PKG_CONFIG_PATH $d/lib/pkgconfig
 prepend-path PYTHONPATH $d/python
-setenv IGUANA_FORTRAN_LIBS "-L$d/lib -lIguanaAlgorithms -lIguanaFortran"
-setenv IGUANA_FORTRAN_FLAGS "-I$d/lib/iguana"
-
+prepend-path ROOT_INCLUDE_PATH $d/include
