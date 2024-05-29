@@ -15,7 +15,7 @@ The documentation for just using these environment modules has so far been [main
 ### Special Modules
 Most modules here just update one's environment for a single, particular software package, by adding that package's directory to some runtime executable or library search paths.  The modules below are a bit different.  Remember that `module show` will also print what it will do to your environment.
 * clas12
-  * load a bunch of other modules to providing a full CLAS12 environment
+  * loads a bunch of other modules to provide a full CLAS12 environment in one shot
 * geant4
   * adds the independent geant4-related modulefiles, e.g. gemc, to the search path
 * tmpfs
