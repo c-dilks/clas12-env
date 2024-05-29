@@ -2,7 +2,7 @@
 
 module-whatis https://github.com/gavalian/driftchambers
 
-prereq .system
+prereq system
 prereq hipo
 
 set v [getvenv HIPO]

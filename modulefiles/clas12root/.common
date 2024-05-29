@@ -2,7 +2,7 @@
 
 module-whatis https://github.com/jeffersonlab/clas12root
 
-prereq .system
+prereq system
 
 prereq ccdb
 prereq qadb

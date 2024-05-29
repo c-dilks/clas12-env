@@ -2,7 +2,7 @@
 
 module-whatis https://github.com/jeffersonlab/iguana
 
-prereq .system
+prereq system
 prereq hipo
 prereq pymods
 

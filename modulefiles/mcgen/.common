@@ -2,7 +2,7 @@
 
 module-whatis https://github.com/jeffersonlab/clas12-mcgen
 
-prereq .system
+prereq system
 prereq root
 
 conflict mcgen

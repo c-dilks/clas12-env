@@ -2,7 +2,7 @@
 
 module-whatis https://github.com/gavalian/hipo
 
-prereq .system
+prereq system
 
 conflict hipo
 

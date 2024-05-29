@@ -1,6 +1,6 @@
 #%Module1.0
 
-prereq .system
+prereq system
 prereq root
 
 conflict mcgen

@@ -2,7 +2,7 @@
 
 module-whatis https://root.cern.ch
 
-prereq .system
+prereq system
 
 conflict root
 
