@@ -20,7 +20,7 @@ Most modules here just update one's environment for a single, particular softwar
   * adds the [independent geant4-related modulefiles](), e.g. gemc, to the search path
 * tmpfs
   * sets various envionment variables to get various software to use a `/tmp` alternative, e.g. for when it's mounted noexec
-  * maven, apptainer, java, things that honor `TMPDIR` ...
+  * this includes maven, apptainer, java, and things that honor `TMPDIR`
 
 Also, these two modules below are required by many other modules to provide some 3rd-patry dependencies.  No automated recipe currently exists for these installations, but they required only very standard build and/or install procedures with no patching.
 * system
