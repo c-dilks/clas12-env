@@ -1,0 +1,17 @@
+#%Module1.0
+
+module-whatis https://github.com/baltzell/ccdb/releases/tag/v$version
+
+prereq system
+prereq pymods
+
+conflict ccdb
+
+setenv CCDB_USER $env(USER)
+setenv CCDB_HOME [home]/[osrelease]/local/ccdb/$version
+setenv CCDB_CONNECTION mysql://clas12reader@clasdb-farm.jlab.org/clas12
+
+prepend-path PATH $env(CCDB_HOME)/bin
+prepend-path LD_LIBRARY_PATH $env(CCDB_HOME)/lib
+prepend-path PYTHONPATH $env(CCDB_HOME)/python
+
