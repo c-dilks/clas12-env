@@ -55,11 +55,12 @@ proc osrelease {} {
 
 # print a warning message if a path doesn't exist:
 proc warndir {path msg} {
-    if [module-info mode load] {
-        if {! [file isdirectory $path ] } {
-            puts stderr "\033\[1;33mWARNING:\033\[0m  $msg"
-        }
+    if [file isdirectory $path] {
+        return 1
+    } elseif [module-info mode load] {
+        puts stderr "\033\[1;33mWARNING:\033\[0m  $msg"
     }
+    return 0
 }
 
 # list all site-specific procedures to expose to modulefile and modulerc
