@@ -53,12 +53,16 @@ proc osrelease {} {
     return [ exec [home]/util/osrelease.py ]
 }
 
+proc warn {msg} {
+    puts stderr "\033\[1;33mWARNING:\033\[0m $msg"
+}
+
 # print a warning message if a path doesn't exist:
 proc warndir {path msg} {
     if [file isdirectory $path] {
         return 1
     } elseif [module-info mode load] {
-        puts stderr "\033\[1;33mWARNING:\033\[0m  $msg"
+        warn $msg
     }
     return 0
 }
