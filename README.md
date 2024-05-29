@@ -13,7 +13,7 @@ The main branch is deployed on CVMFS and used for running software at JLab, on t
 The documentation for just using these environment modules has so far been [maintained at this wiki](https://clasweb.jlab.org/wiki/index.php/CLAS12_Software_Environment_@_JLab).
 
 ### Special Modules
-Most modules here just update your environment for a single, particular software package, by adding that package's directory to some runtime executable or library search paths.  The modules below are a bit different.  Remember that `module show` will also print what it will do to your environment.
+Most modules here just update one's environment for a single, particular software package, by adding that package's directory to some runtime executable or library search paths.  The modules below are a bit different.  Remember that `module show` will also print what it will do to your environment.
 * clas12
   * an "uber-module" providing a full clas12 environment by loading a bunch of other modules
 * geant4
