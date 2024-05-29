@@ -1,7 +1,7 @@
 # clas12-env
 
 ### Overview
-This repository is the environment setup for the non-GEANT portion of CLAS12 software builds.  It leverages modulefiles's prerequisites and conflicts to help ensure a working environment with easy and flexible manipulations.
+This repository is the environment setup for CLAS12 software.  It leverages modulefiles's prerequisites and conflicts to help ensure a working environment with easy and flexible manipulations.  Note, the environment modulefiles and software builds associated with GEANT are maintained separately at [insert link]().
 
 ### In Use
 The main branch is deployed on CVMFS and used for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access:
