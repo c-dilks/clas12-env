@@ -11,7 +11,7 @@ The main branch is deployed on CVMFS and used for running software at JLab, on t
 The documentation for just using these environment modules has so far been [maintained at this wiki](https://clasweb.jlab.org/wiki/index.php/CLAS12_Software_Environment_@_JLab).
 
 ### Special Modules
-These two modules are required by many other modules to provide some 3rd-patry dependencies.  No automated recipe currently exists for these installations, but they required only very standard procedures with no patching.
+These two modules are required by many other modules to provide some 3rd-patry dependencies.  No automated recipe currently exists for these installations, but they required only very standard build and/or install procedures with no patching.
 * system
   * sets `OSRELEASE` based on the operating system
   * sets `CLAS12_HOME` (only for convenience)
