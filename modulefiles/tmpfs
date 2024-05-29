@@ -13,6 +13,8 @@ proc settmp {tmpdir} {
             setenv APPTAINER_TMPDIR $tmpdir/apptainer.tmp
             append-path --delim " " MAVEN_OPTS -Dmaven.repo.local=$tmpdir/maven.m2
             append-path --delim " " MAVEN_OPTS -Djansi.tmpdir=$tmpdir/jansi.tmpdir
+            append-path --delim " " JAVA_OPTS -Djava.io.tmpdir=$tmpdir/java.io.tmpdir
+            append-path --delim " " JAVA_OPTS -Dorg.sqlite.tmpdir=$tmpdir/org.sqlite.tmpdir
             return 1
         }
         lappend failed $tmpdir
