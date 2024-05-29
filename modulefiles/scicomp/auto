@@ -1,0 +1,25 @@
+#%Module1.0
+
+set prefix {}
+set searched {}
+set common [file dirname $ModulesCurrentModulefile]/.common
+
+proc search {path} {
+    puts stderr $path
+    global prefix common searched
+    lappend searched $path
+    if [file isdirectory $path] {
+        set prefix $path
+        return 1
+    }
+    return 0
+}
+
+if {! [search /scigroup/cvmfs/scicomp/sw/modulefiles] } {
+    if {! [search /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw] } {
+        warn "Could not find JLab scicomp's modulefiles on this system at:"
+        warn [join $searched \n\t]
+    }
+} else {
+    source $common
+}

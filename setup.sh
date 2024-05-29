@@ -18,15 +18,6 @@ else
         source /etc/profile.d/modules.sh
     fi
 
-    # add scicomp modulefiles:
-    if [ -e /etc/redhat-release ]; then
-        if grep -q -i Alma /etc/redhat-release || grep -q -i Plow /etc/redhat-release; then
-            if [ -e /cvmfs/oasis.opensciencegrid.org ]; then
-                module use /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
-            fi
-        fi
-    fi
-
     # add clas12 modulefiles:
     module use $home/modulefiles
     module config extra_siteconfig $home/util/modulefiles.tcl

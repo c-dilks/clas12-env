@@ -1,0 +1,5 @@
+#%Module1.0
+
+set prefix /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9
+source [file dirname $ModulesCurrentModulefile]/.common
+

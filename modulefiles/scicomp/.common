@@ -1,0 +1,16 @@
+#%Module1.0
+
+module-whatis modulefiles for software provided by jefferson lab's IT division
+
+set supported_systems [dict create almalinux9-gcc11 el9]
+
+if [dict exists $supported_systems [osrelease]] {
+    if { [warndir $prefix/modulefiles "$prefix is not available on this system"] } {
+        module use -a $prefix/modulefiles
+    }
+} else {
+    set msg "Your operating system is not yet supported:  [osrelease]"
+    puts stderr "\033\[1;33mWARNING:\033\[0m   $msg"
+}
+
+
