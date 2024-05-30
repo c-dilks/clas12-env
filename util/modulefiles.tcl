@@ -69,5 +69,5 @@ proc warndir {path msg} {
 
 # list all site-specific procedures to expose to modulefile and modulerc
 # interpreter contexts:
-set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease warndir]
+set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease warn warndir]
 
