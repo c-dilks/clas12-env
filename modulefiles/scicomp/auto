@@ -3,6 +3,7 @@
 set prefix {}
 set searched {}
 set common [file dirname $ModulesCurrentModulefile]/.common
+set supported_systems [dict create almalinux9-gcc11 el9]
 
 proc search {path} {
     global prefix common searched
@@ -14,7 +15,10 @@ proc search {path} {
     return 0
 }
 
-if {! [search /scigroup/cvmfs/scicomp/sw/modulefiles] } {
+if {! [dict exists $supported_systems [osrelease]] } {
+    warn "[osrelease] is not supported by JLab's scicomp group"
+    exit 0
+} elseif {! [search /scigroup/cvmfs/scicomp/sw/modulefiles] } {
     if {! [search /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw] } {
         warn "cannot find JLab scicomp's modulefiles at any of:"
         foreach s $searched { warn \t$s }
