@@ -5,7 +5,6 @@ set searched {}
 set common [file dirname $ModulesCurrentModulefile]/.common
 
 proc search {path} {
-    puts stderr $path
     global prefix common searched
     lappend searched $path
     if [file isdirectory $path] {
@@ -17,8 +16,8 @@ proc search {path} {
 
 if {! [search /scigroup/cvmfs/scicomp/sw/modulefiles] } {
     if {! [search /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw] } {
-        warn "Could not find JLab scicomp's modulefiles on this system at:"
-        warn [join $searched \n\t]
+        warn "cannot find JLab scicomp's modulefiles at any of:"
+        foreach s $searched { warn \t$s }
     }
 } else {
     source $common
