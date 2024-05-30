@@ -1,6 +1,6 @@
 #%Module1.0
 
-module-whatis modulefiles for software provided by jefferson lab's IT division
+module-whatis modulefiles for software provided by JLab's IT division, e.g. cernlib
 
 set supported_systems [dict create almalinux9-gcc11 el9]
 
@@ -9,8 +9,7 @@ if [dict exists $supported_systems [osrelease]] {
         module use -a $prefix/modulefiles
     }
 } else {
-    set msg "Your operating system is not yet supported:  [osrelease]"
-    puts stderr "\033\[1;33mWARNING:\033\[0m   $msg"
+    warn "[osrelease] is not supported by JLab's scicomp group"
+    exit 0
 }
-
 
