@@ -1,14 +1,11 @@
-#%Module1.0
 
-module-whatis modulefiles for software provided by JLab's IT division, e.g. cernlib
+set searched {}
 
-set supported_systems [dict create almalinux9-gcc11 el9]
-
-if [dict exists $supported_systems [osrelease]] {
-    if { [warndir $prefix/modulefiles "$prefix is not available on this system"] } {
-        module use -a $prefix/modulefiles
+proc check_prefix { prefix } {
+    lappend ::searched $prefix
+    if { [file isdirectory $prefix/modulefiles] } {
+        return 1
     }
-} elseif {! [module-info mode unload] } {
-    warn "[osrelease] is not supported by JLab's scicomp group"
+    return 0
 }
 

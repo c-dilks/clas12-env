@@ -1,0 +1,31 @@
+#%Module1.0
+module-whatis modulefiles for software provided by JLab's IT division, e.g. cernlib
+
+set supported [dict create almalinux9-gcc11 el9]
+set searched {}
+
+proc check_prefix { prefix } {
+    lappend ::searched $prefix
+    if { [file isdirectory $prefix/modulefiles] } {
+        return 1
+    }
+    return 0
+}
+
+if [dict exists $supported [osrelease]] {
+    set p /scigroup/cvmfs/scicomp/sw/[dict get $supported [osrelease]]
+    if { [check_prefix $p] } {
+        module use -a $p/modulefiles
+    } elseif {
+        set p /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/[dict get $supported [osrelease]]
+        if { [check_prefix $p] } {
+            module use -a $p/modulefiles
+        } else {
+            warn "cannot find JLab scicomp's modulefiles at any of:"
+            foreach s $searched { warn \t$s }
+        }
+    }
+} elseif {! [module-info mode unload] } {
+    warn "[osrelease] is not supported by JLab's scicomp group"
+}
+
