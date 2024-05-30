@@ -33,7 +33,7 @@ proc getenv {name default} {
 # get the basename of the value of a path-like environment variable, which
 # will commonly be a version number, with a default of "$name":
 proc getvenv {name} {
-    return [ exec basename [getenv $name \$$name] ] 
+    return [ file tail [getenv $name \$$name] ] 
 }
 
 # get the full, normlized path to the directory containing this tcl script:
