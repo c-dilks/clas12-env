@@ -21,7 +21,7 @@ Most modules here just update one's environment for a single, particular softwar
 * tmpfs
   * sets various envionment variables to get various software (maven, apptainer, java, things that honor `TMPDIR`, etc.) to use a `/tmp` alternative, e.g. for when it's mounted noexec
 
-Also, these two modules below are required by many other modules to provide some 3rd-party dependencies.  While no automated recipe currently exists for installation of those dependencies, they required only very standard build and/or install procedures with no patching.
+Also, these two modules below are required by many other modules to provide some 3rd-party dependencies.  While no automated recipe currently exists for installation of those dependencies, they require only very standard build and install procedures with no patching.
 * system
   * sets `OSRELEASE` based on the operating system (via [this script](util/osrelease.py))
   * sets `CLAS12_HOME` (only for convenience)
