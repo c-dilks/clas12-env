@@ -13,13 +13,13 @@ The main branch is deployed on CVMFS and used for running software at JLab, on t
 The documentation for just using these environment modules has so far been [maintained at this wiki](https://clasweb.jlab.org/wiki/index.php/CLAS12_Software_Environment_@_JLab).
 
 ### Special Modules
-Most modules here just update one's environment for a single, particular software package, by adding that package's directory to some runtime executable or library search paths.  The modules below are a bit different.  Remember that `module show` will also print what it will do to your environment.
+Most modules here just update one's environment for a single, particular software package, by adding that package's directory to some runtime executable/library search paths.  The modules below are a bit different.  Remember that `module show` will print what a given module will do to your environment.
 * clas12
   * loads a bunch of other modules to provide a full CLAS12 environment in one shot
 * geant4
   * adds the [independent geant4-related modulefiles](), e.g. gemc, to the search path
 * tmpfs
-  * sets various envionment variables to get various software (maven, apptainer, java, things that honor `TMPDIR`) to use a `/tmp` alternative, e.g. for when it's mounted noexec
+  * sets various envionment variables to get various software (maven, apptainer, java, things that honor `TMPDIR`, etc.) to use a `/tmp` alternative, e.g. for when it's mounted noexec
 
 Also, these two modules below are required by many other modules to provide some 3rd-party dependencies.  While no automated recipe currently exists for installation of those dependencies, they required only very standard build and/or install procedures with no patching.
 * system
@@ -29,7 +29,7 @@ Also, these two modules below are required by many other modules to provide some
     * [fmt](https://github.com/fmtlib/fmt)
     * [yaml-cpp](https://github.com/jbeder/yaml-cpp)
 * pymods
-  * sets `PYTHONPATH` to pickup pip-installed python packages:
+  * sets `PYTHONPATH` to pickup these pip-installed python packages (and their dependencies):
     * sqlalchemy
     * pymysql
     * ninja
@@ -38,4 +38,3 @@ Also, these two modules below are required by many other modules to provide some
     * tzdata
     * numpy
     * pandas
-    * (and their dependencies)
