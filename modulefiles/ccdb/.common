@@ -1,5 +1,3 @@
-#%Module1.0
-
 module-whatis https://github.com/baltzell/ccdb/releases/tag/v$version
 
 prereq system
