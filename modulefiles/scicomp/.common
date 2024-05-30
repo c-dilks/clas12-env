@@ -8,8 +8,7 @@ if [dict exists $supported_systems [osrelease]] {
     if { [warndir $prefix/modulefiles "$prefix is not available on this system"] } {
         module use -a $prefix/modulefiles
     }
-} else {
+} elseif {! [module-info mode unload] } {
     warn "[osrelease] is not supported by JLab's scicomp group"
-    exit 0
 }
 
