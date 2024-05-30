@@ -1,10 +1,23 @@
 
-set searched {}
+module-whatis modulefiles for software provided by JLab's IT division, e.g. cernlib
 
-proc check_prefix { prefix } {
-    lappend ::searched $prefix
-    if { [file isdirectory $prefix/modulefiles] } {
-        return 1
+set supported [dict create almalinux9-gcc11 el9]
+
+set prefixes [list /scigroup/cvmfs/scicomp/sw /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw]
+
+proc expand {prefix} {
+    return "$prefix/[dict get $supported [osrelease]]/modulefiles"
+}
+
+proc check {prefix} {
+    if [dict exists $::supported [osrelease]] {
+        if [file isdirectory [expand $prefix]] {
+            return 1
+        } else {
+            warn "[expand $prefix] is not accessible"
+        }
+    } else {
+        warn "[osrelease] is not supported by JLab's scicomp group"
     }
     return 0
 }

@@ -1,0 +1,8 @@
+#%Module1.0
+
+source [file dirname $ModulesCurrentModulefile]/.common
+
+if [check /scigroup/cvmfs/scicomp/sw] {
+    module use -a [expand /scigroup/cvmfs/scicomp/sw]
+}
+

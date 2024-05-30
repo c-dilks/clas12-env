@@ -1,29 +1,38 @@
 #%Module1.0
 
-set prefix {}
-set searched {}
-set common [file dirname $ModulesCurrentModulefile]/.common
-set supported_systems [dict create almalinux9-gcc11 el9]
+source [file dirname $ModulesCurrentModulefile]/.common
 
-proc search {path} {
-    global prefix common searched
-    lappend searched $path
-    if [file isdirectory $path] {
-        set prefix $path
-        return 1
+set searched {}
+
+set found 0
+foreach prefix $prefixes {
+    if [file isdirectory $prefix] {
+        set found 1
+        break
     }
-    return 0
 }
 
-if {! [dict exists $supported_systems [osrelease]] } {
-    warn "[osrelease] is not supported by JLab's scicomp group"
-    exit 0
-} elseif {! [search /scigroup/cvmfs/scicomp/sw/modulefiles] } {
-    if {! [search /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw] } {
+if {$found == 0} {
+    if {! [module-info mode unload] } {
+        warn "cannot find JLab scicomp software, none of these filesystems are available:"
+        warn [join $prefixes ,]
+    }
+} elseif [dict exists $supported [osrelease]] {
+    set found 0
+    foreach prefix prefixes {
+        lappend searched $prefix
+        set m $prefix/[dict get $supported [osrelease]]/modulefiles
+        if [file isdirectory $m] {
+            module use -a $m
+            set found 1
+            break
+        }
+    }
+    if {$found == 0} {
         warn "cannot find JLab scicomp's modulefiles at any of:"
         foreach s $searched { warn \t$s }
-        exit 0
     }
-} else {
-    source $common
+} elseif {! [module-info mode unload] } {
+    warn "[osrelease] is not supported by JLab's scicomp group"
 }
+

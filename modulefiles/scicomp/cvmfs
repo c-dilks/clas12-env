@@ -1,5 +1,8 @@
 #%Module1.0
 
-set prefix /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9
 source [file dirname $ModulesCurrentModulefile]/.common
+
+if [check /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw] {
+    module use -a [expand /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw]
+}
 

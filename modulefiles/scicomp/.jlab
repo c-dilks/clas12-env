@@ -1,5 +1,0 @@
-#%Module1.0
-
-set prefix /scigroup/cvmfs/scicomp/sw/el9
-source [file dirname $ModulesCurrentModulefile]/.common
-
