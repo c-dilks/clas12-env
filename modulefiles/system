@@ -11,4 +11,5 @@ prepend-path PATH $env(CLAS12_HOME)/$env(OSRELEASE)/bin
 prepend-path LD_LIBRARY_PATH $env(CLAS12_HOME)/$env(OSRELEASE)/lib
 prepend-path LD_LIBRARY_PATH $env(CLAS12_HOME)/$env(OSRELEASE)/lib64
 prepend-path PKG_CONFIG_PATH $env(CLAS12_HOME)/$env(OSRELEASE)/lib64/pkgconfig
+prepend-path ROOT_INCLUDE_PATH $env(CLAS12_HOME)$env(OSRELEASE)/lib64
 

@@ -1,1 +1,8 @@
-.generic
+#%Module1.0
+
+prereq hipo/4.1.0
+
+set version [file tail [module-info version [module-info name]]]
+
+source [file dirname $ModulesCurrentModulefile]/.common
+
