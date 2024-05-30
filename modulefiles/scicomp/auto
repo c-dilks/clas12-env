@@ -18,6 +18,7 @@ if {! [search /scigroup/cvmfs/scicomp/sw/modulefiles] } {
     if {! [search /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw] } {
         warn "cannot find JLab scicomp's modulefiles at any of:"
         foreach s $searched { warn \t$s }
+        exit 0
     }
 } else {
     source $common
