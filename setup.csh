@@ -36,16 +36,6 @@ if ( ($?clas12_home) && (-d $clas12_home/modulefiles) ) then
         source /etc/profile.d/modules.csh
     endif
 
-    # add scicomp modulefiles:
-    if ( -e /etc/redhat-release ) then
-        if ( -e /cvmfs/oasis.opensciencegrid.org ) then
-            grep -q -i -e Alma -e Plow /etc/redhat-release
-            if ( $? == 0 ) then
-                module use /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw/el9/modulefiles
-            endif
-        endif
-    endif
-
     # add clas12 modulefiles:
     module use $clas12_home/modulefiles
     module config extra_siteconfig $clas12_home/util/modulefiles.tcl
