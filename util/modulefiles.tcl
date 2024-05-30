@@ -53,6 +53,12 @@ proc osrelease {} {
     return [ exec [home]/util/osrelease.py ]
 }
 
+# print a colored error message:
+proc err {msg} {
+    puts stderr "\033\[1;31mERROR:\033\[0m $msg"
+}
+
+# print a colored warning message:
 proc warn {msg} {
     puts stderr "\033\[1;33mWARNING:\033\[0m $msg"
 }
@@ -69,5 +75,5 @@ proc warndir {path msg} {
 
 # list all site-specific procedures to expose to modulefile and modulerc
 # interpreter contexts:
-set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease warn warndir]
+set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease err warn warndir]
 
