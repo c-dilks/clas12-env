@@ -19,7 +19,7 @@ if {$found == 0} {
     }
 } elseif [dict exists $supported [osrelease]] {
     set found 0
-    foreach prefix prefixes {
+    foreach prefix $prefixes {
         lappend searched $prefix
         set m $prefix/[dict get $supported [osrelease]]/modulefiles
         if [file isdirectory $m] {
@@ -30,7 +30,7 @@ if {$found == 0} {
     }
     if {$found == 0} {
         warn "cannot find JLab scicomp's modulefiles at any of:"
-        foreach s $searched { warn \t$s }
+        warn [join $searched ,]
     }
 } elseif {! [module-info mode unload] } {
     warn "[osrelease] is not supported by JLab's scicomp group"

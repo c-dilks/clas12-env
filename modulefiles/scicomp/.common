@@ -6,7 +6,7 @@ set supported [dict create almalinux9-gcc11 el9]
 set prefixes [list /scigroup/cvmfs/scicomp/sw /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw]
 
 proc expand {prefix} {
-    return "$prefix/[dict get $supported [osrelease]]/modulefiles"
+    return "$prefix/[dict get $::supported [osrelease]]/modulefiles"
 }
 
 proc check {prefix} {
