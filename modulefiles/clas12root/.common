@@ -16,4 +16,5 @@ prepend-path PATH $env(CLAS12ROOT)/bin
 prepend-path LD_LIBRARY_PATH $env(CLAS12ROOT)/lib
 prepend-path ROOT_INCLUDE_PATH $env(CLAS12ROOT)/Clas12Root
 prepend-path ROOT_INCLUDE_PATH $env(CLAS12ROOT)/Clas12Banks
+prepend-path ROOT_INCLUDE_PATH [home]/[osrelease]/include
 
