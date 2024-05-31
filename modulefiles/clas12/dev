@@ -35,5 +35,5 @@ prereq --optional util
 
 # gemc:
 prereq --optional geant4
-prereq --optional gemc/dev
+#prereq --optional gemc/dev
 
