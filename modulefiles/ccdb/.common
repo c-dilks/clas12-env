@@ -5,6 +5,8 @@ prereq pymods
 
 conflict ccdb
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 setenv CCDB_USER $env(USER)
 setenv CCDB_HOME [home]/[osrelease]/local/ccdb/$version
 setenv CCDB_CONNECTION mysql://clas12reader@clasdb-farm.jlab.org/clas12

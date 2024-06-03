@@ -1,4 +1,6 @@
 module-whatis https://userweb.jlab.org/~heddle/ced
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 prepend-path PATH [home]/noarch/ced/$version
 

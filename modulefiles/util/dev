@@ -6,5 +6,7 @@ prereq ccdb
 prereq rcdb
 prereq pymods
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 prepend-path PATH [home]/noarch/clas12-utilities/dev/bin
 

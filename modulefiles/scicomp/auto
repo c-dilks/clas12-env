@@ -1,6 +1,7 @@
 #%Module1.0
 
 source [file dirname $ModulesCurrentModulefile]/.common
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
 
 set searched {}
 

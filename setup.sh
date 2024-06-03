@@ -20,5 +20,4 @@ else
 
     # add clas12 modulefiles:
     module use $home/modulefiles
-    module config extra_siteconfig $home/util/siteconfig.tcl
 fi

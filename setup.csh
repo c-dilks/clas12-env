@@ -38,7 +38,6 @@ if ( ($?clas12_home) && (-d $clas12_home/modulefiles) ) then
 
     # add clas12 modulefiles:
     module use $clas12_home/modulefiles
-    module config extra_siteconfig $clas12_home/util/siteconfig.tcl
 else
     echo 'ERROR: could not find $CLAS12_HOME.  Note, if you are sourcing this'
     echo 'from another tcsh script, you need to either pass the full path as'

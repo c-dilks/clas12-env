@@ -4,6 +4,8 @@ prereq system
 
 conflict hipo
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 setenv HIPO [home]/[osrelease]/local/hipo/$version
 prepend-path PATH $env(HIPO)/bin
 prepend-path LD_LIBRARY_PATH $env(HIPO)/lib

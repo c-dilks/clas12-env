@@ -5,6 +5,8 @@ conflict maven
 
 set version 3.9.6
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 setenv MAVEN_HOME [home]/noarch/maven/$version
 prepend-path PATH $env(MAVEN_HOME)/bin
 

@@ -1,6 +1,8 @@
 prereq ccdb
 prereq rcdb
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 setenv CCDB_CONNECTION sqlite:///[home]/noarch/data/ccdb/ccdb_$version.sqlite
 setenv RCDB_CONNECTION sqlite:///[home]/noarch/data/rcdb/rcdb_$version.sqlite
 
