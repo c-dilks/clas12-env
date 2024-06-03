@@ -31,11 +31,6 @@ else
 endif
 
 if ( ($?clas12_home) && (-d $clas12_home/modulefiles) ) then
-    # system module initialization for non-login shells:
-    if ( -e /etc/profile.d/modules.csh ) then
-        source /etc/profile.d/modules.csh
-    endif
-
     # add clas12 modulefiles:
     module use $clas12_home/modulefiles
 else

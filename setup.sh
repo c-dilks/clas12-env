@@ -13,11 +13,6 @@ fi
 if [ -z ${home+x} ] && [ -d $home/modulefiles ]; then
     echo 'ERROR:  could not find $CLAS12_HOME.'
 else
-    # system module initialization for non-login shells:
-    if [ -e /etc/profile.d/modules.sh ]; then
-        source /etc/profile.d/modules.sh
-    fi
-
     # add clas12 modulefiles:
     module use $home/modulefiles
 fi
