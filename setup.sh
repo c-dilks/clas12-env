@@ -13,6 +13,7 @@ fi
 if [ -z ${home+x} ] && [ -d $home/modulefiles ]; then
     echo 'ERROR:  could not find $CLAS12_HOME.'
 else
-    # add clas12 modulefiles:
+    echo "WARNING:  This $home/setup.sh script is deprecated and will be removed by 2025."
+    echo "WARNING:  This is equivalent and should be used instead:  'module use $home/modulefiles'"
     module use $home/modulefiles
 fi
