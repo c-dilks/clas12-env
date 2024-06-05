@@ -1,20 +1,7 @@
 #%Module1.0
 
-prereq system
-prereq hipo@4.1.0,4.0.1
-prereq pymods
+set version [file tail [module-info version [module-info name]]]
+set hipo_prereq hipo@4.1.0,4.0.1
 
-conflict iguana
+source [file dirname $ModulesCurrentModulefile]/.common
 
-set version 0.5.0
-set v [getvenv HIPO]
-set d [home]/[osrelease]/local/iguana/$version/$v
-
-warndir $d "iguana/$version is not available for hipo/$v"
-
-setenv IGUANA $d
-prepend-path PATH $d/bin
-prepend-path LD_LIBRARY_PATH $d/lib
-prepend-path PKG_CONFIG_PATH $d/lib/pkgconfig
-prepend-path PYTHONPATH $d/python
-prepend-path ROOT_INCLUDE_PATH $d/include
