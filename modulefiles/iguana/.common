@@ -17,3 +17,4 @@ prepend-path LD_LIBRARY_PATH $d/lib
 prepend-path PKG_CONFIG_PATH $d/lib/pkgconfig
 prepend-path PYTHONPATH $d/python
 prepend-path ROOT_INCLUDE_PATH $d/include
+append-path IGUANA_CONFIG_PATH $d/etc/iguana
