@@ -1,6 +1,6 @@
 #%Module1.0
 
-module-whatis initialize jlab geant4 modulefiles
+module-whatis initialize jlab geant4 modulefiles, https://geant4.jlab.org/node/1
 
 setenv SIM_HOME /cvmfs/oasis.opensciencegrid.org/jlab/geant4
 module use -a $env(SIM_HOME)/ceInstall/modulefiles
