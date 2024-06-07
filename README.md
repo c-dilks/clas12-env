@@ -42,10 +42,11 @@ Also, these two modules below are required by many other modules to provide some
     * pandas
 
 ### Build Structure
-This repository contains no software other than a few tcl functions, but it does assume a directory structure for the software builds it references:
+While this repository contains no software other than a few tcl functions, it must (of course) assume some directory structure for the software builds it references:
 
-- [modulefiles](modulefiles)
-- noarch (data/shell/python)
-- linux-64 (jdks)
-- [osrelease](util/osrelease.py))
+- the root directory of this repository
+  - [modulefiles](modulefiles)
+  - noarch (data/shell/python)
+  - linux-64 (jdks)
+  - [osrelease](util/osrelease.py), e.g. `almalinux9-gcc11`
 
