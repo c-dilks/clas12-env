@@ -2,6 +2,8 @@
 
 module-whatis find an alternative for /tmp (e.g., when it's mounted noexec)
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 set failed {}
 
 proc settmp {tmpdir} {

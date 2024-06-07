@@ -1,6 +1,8 @@
 
 module-whatis modulefiles for software provided by JLab's IT division, e.g. cernlib
 
+source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+
 set supported [dict create almalinux9-gcc11 el9]
 
 set prefixes [list /scigroup/cvmfs/scicomp/sw /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw]
