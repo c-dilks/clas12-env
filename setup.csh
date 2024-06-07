@@ -31,8 +31,9 @@ else
 endif
 
 if ( ($?clas12_home) && (-d $clas12_home/modulefiles) ) then
-    echo "WARNING:  This $clas12_home/setup.csh script is deprecated and will be removed by 2025."
-    echo "WARNING:  This equivalent should be used instead:  'module use $clas12_home/modulefiles'"
+    echo "WARNING:  $clas12_home/setup.csh is deprecated\!\!\!\!\!"
+    echo "WARNING:  It will be removed in the future.  This equivalent should be used instead:"
+    echo ">>>>>>>   module use $clas12_home/modulefiles"
     module use $clas12_home/modulefiles
 else
     echo 'ERROR: could not find $CLAS12_HOME.  Note, if you are sourcing this'
