@@ -6,7 +6,7 @@ prereq pymods
 
 set v 1.99.0
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 setenv RCDB_HOME [home]/noarch/rcdb/$v
 

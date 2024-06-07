@@ -5,7 +5,7 @@ prereq pymods
 
 conflict ccdb
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 setenv CCDB_USER $env(USER)
 setenv CCDB_HOME [home]/[osrelease]/local/ccdb/$version

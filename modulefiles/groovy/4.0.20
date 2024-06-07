@@ -1,5 +1,5 @@
 #%Module1.0
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 prepend-path PATH [home]/noarch/groovy/4.0.20/bin

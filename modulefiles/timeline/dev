@@ -6,7 +6,7 @@ prereq rcdb
 prereq groovy/4.0.3
 prereq coatjava
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 set d [home]/noarch/clas12-timeline/dev
 

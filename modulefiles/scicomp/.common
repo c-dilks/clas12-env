@@ -1,7 +1,7 @@
 
 module-whatis modulefiles for software provided by JLab's IT division, e.g. cernlib
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 set supported [dict create almalinux9-gcc11 el9]
 

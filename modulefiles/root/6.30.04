@@ -6,7 +6,7 @@ prereq system
 
 conflict root
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 set top [home]/[osrelease]/local/root/6.30.04
 

@@ -9,7 +9,7 @@ prereq coatjava
 prereq jdk
 prereq pymods
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 set d [home]/noarch/clas12-workflow/dev
 

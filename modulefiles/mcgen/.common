@@ -5,7 +5,7 @@ prereq root
 
 conflict mcgen
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 set d [home]/[osrelease]/local/clas12-mcgen/$version
 

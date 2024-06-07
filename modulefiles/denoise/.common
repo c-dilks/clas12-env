@@ -3,7 +3,7 @@ module-whatis https://github.com/gavalian/driftchambers
 prereq system
 prereq hipo
 
-source [file dirname $ModulesCurrentModulefile]/../../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 set v [getvenv HIPO]
 set d [home]/[osrelease]/local/driftchambers/$version/$v
