@@ -40,13 +40,14 @@ And these two modules below are required by many other clas12 modules to provide
     * pandas
 
 ### Build Structure
-The environment modulefiles in this repository follow a particular directory structure for the software builds it references:
+The environment modulefiles here use a particular *relative* directory structure for the software builds it references.  
 
-- [modulefiles](modulefiles)
-- noarch (data/shell/python)
-- linux-64 (jdks)
-- [osrelease#1](util/osrelease.py), e.g. `almalinux9-gcc11`
-- [osrelease#2](util/osrelease.py), e.g. `rhel9-gcc11`
-- ...
+- some "top" directory
+  - [`modulefiles`](modulefiles) (from this repository)
+  - `noarch` (data/shell/python)
+  - `linux-64` (jdks)
+  - [[osrelease#1]](util/osrelease.py), e.g. `almalinux9-gcc11`
+  - [[osrelease#2]](util/osrelease.py), e.g. `rhel9-gcc11`
+  - ...
 
 (Is there a web-based CVMFS browser we could link to?)
