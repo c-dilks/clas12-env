@@ -23,7 +23,7 @@ Most modules here just update one's environment for a single, particular softwar
 * scicomp
   * adds [modulefiles from JLab's scicomp group](https://jlab.servicenowservices.com/scicomp?id=kb_article_view&sysparm_article=KB0014671), e.g. `cernlib/2023`, to the search path
 
-Also, these two modules below are required by many other modules to provide some 3rd-party dependencies.  While no automated recipe currently exists for installation of those dependencies, they require only very standard build and install procedures with no patching.
+Also, these two modules below are required by many other modules to provide some 3rd-party dependencies:
 * system
   * sets `OSRELEASE` based on the operating system (via [this script](util/osrelease.py))
   * sets `CLAS12_HOME` (only for convenience)
