@@ -1,7 +1,7 @@
 # clas12-env
 
 ### Overview
-This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  *Note, the modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
+This is just a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  *Note, the modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
 
 ### In Use
 The main branch is deployed on CVMFS and used for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access:
