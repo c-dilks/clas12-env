@@ -48,5 +48,5 @@ While this repository contains no software other than a few tcl functions, it mu
   - [modulefiles](modulefiles)
   - noarch (data/shell/python)
   - linux-64 (jdks)
-  - [osrelease](util/osrelease.py), e.g. `almalinux9-gcc11`
+  - [[osrelease]](util/osrelease.py), e.g. `almalinux9-gcc11`
 
