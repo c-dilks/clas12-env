@@ -1,9 +1,7 @@
 # clas12-env
 
 ### Overview
-This repository is the environment setup for CLAS12 software.  It leverages modulefiles's prerequisites and conflicts to help ensure a working environment with easy and flexible manipulations.  
-
-*Note, the modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
+This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  *Note, the modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
 
 ### In Use
 The main branch is deployed on CVMFS and used for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access:
@@ -42,11 +40,13 @@ And these two modules below are required by many other clas12 modules to provide
     * pandas
 
 ### Build Structure
-While this repository contains no software other than a few tcl functions, it must (of course) assume some directory structure for the software builds it references:
+The environment modulefiles in this repository follow a particular directory structure for the software builds it references:
 
-- the root directory of this repository
-  - [modulefiles](modulefiles)
-  - noarch (data/shell/python)
-  - linux-64 (jdks)
-  - [[osrelease]](util/osrelease.py), e.g. `almalinux9-gcc11` or `macosx14-clang15`
+- [modulefiles](modulefiles)
+- noarch (data/shell/python)
+- linux-64 (jdks)
+- [osrelease#1](util/osrelease.py), e.g. `almalinux9-gcc11`
+- [osrelease#2](util/osrelease.py), e.g. `rhel9-gcc11`
+- ...
 
+(Is there a web-based CVMFS browser we could link to?)
