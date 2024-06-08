@@ -17,13 +17,13 @@ Most modules here just update one's environment for a single, particular softwar
 * clas12
   * loads a bunch of other modules to provide a full CLAS12 environment in one shot
 * geant4
-  * adds the [independent geant4-related modulefiles](https://geant4.jlab.org/node/1), e.g. gemc, to the search path
-* tmpfs
-  * sets various envionment variables to get various software (maven, apptainer, java, things that honor `TMPDIR`, etc.) to use a `/tmp` alternative, e.g. for when it's mounted noexec
+  * adds [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`, to the search path
 * scicomp
   * adds [modulefiles from JLab's scicomp group](https://jlab.servicenowservices.com/scicomp?id=kb_article_view&sysparm_article=KB0014671), e.g. `cernlib/2023`, to the search path
+* tmpfs
+  * sets envionment variables to get various software (maven, apptainer, java, things that honor `TMPDIR`, etc.) to use a `/tmp` alternative, e.g. for when it's mounted noexec
 
-Also, these two modules below are required by many other modules to provide some 3rd-party dependencies:
+And these two modules below are required by many other clas12 modules to provide some 3rd-party dependencies:
 * system
   * sets `OSRELEASE` based on the operating system (via [this script](util/osrelease.py))
   * sets `CLAS12_HOME` (only for convenience)
