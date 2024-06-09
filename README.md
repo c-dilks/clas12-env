@@ -40,7 +40,7 @@ And these two modules below are required by many other clas12 modules to provide
     * pandas
 
 ### Build Structure
-The environment modulefiles here use a particular *relative* directory structure for the software builds it references.  
+The environment modulefiles here use a particular *relative* directory structure for the software builds they reference:
 
 - some "top" directory
   - [`modulefiles`](modulefiles) (from this repository)
