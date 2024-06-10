@@ -5,5 +5,7 @@
 noarch
 linux*
 alma*
-rhel9*
+rhel*
+fedora*
+ubuntu*
 macos*
