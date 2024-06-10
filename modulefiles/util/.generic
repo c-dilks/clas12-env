@@ -1,0 +1,6 @@
+#%Module1.0
+
+set version [file tail [module-info version [module-info name]]]
+set name [string range [module-info name] 0 [string first / [module-info name]]-1]
+source [file dirname $ModulesCurrentModulefile]/../$name/.common
+
