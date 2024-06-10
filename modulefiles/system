@@ -1,4 +1,4 @@
-#%Module5.3
+#%Module1.0
 
 module-whatis core environment variables and some common, 3rd party dependencies
 
