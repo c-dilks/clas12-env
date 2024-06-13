@@ -17,6 +17,7 @@ To get the full CLAS12 "production" environment in one shot:
 
 `module load clas12`
 
+*Note, the shell `setup.[c]sh` files here are deprecated and only for backward compatibility with previous environment setups.  They should not be used and will be removed in the future.*
 
 ## Special Modules
 Most modules here just update one's environment for a single, particular software package, by adding that package's directories to some runtime search path(s).  The modules below are a bit different.  Note that `module show` will print what a given module will do to your environment.
