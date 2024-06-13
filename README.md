@@ -1,16 +1,24 @@
 # clas12-env
+This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  The main branch is deployed on CVMFS for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.  The documentation for just using these environment modules has so far been [maintained at this wiki](https://clasweb.jlab.org/wiki/index.php/CLAS12_Software_Environment_@_JLab).
 
-### Overview
-This is just a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  *Note, the modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
+*Note, the modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
 
-### In Use
-The main branch is deployed on CVMFS for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access:
+## Quick Start
 
-`/cvmfs/oasis.opensciencegrid.jlab.org/jlab/hallb/clas12/sw`
+Only at JLab:
 
-The documentation for just using these environment modules has so far been [maintained at this wiki](https://clasweb.jlab.org/wiki/index.php/CLAS12_Software_Environment_@_JLab).
+`module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles`
 
-### Special Modules
+or, from anywhere with CVMFS:
+
+`module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles`
+
+To get the full CLAS12 "production" environment in one shot:
+
+`module load clas12`
+
+
+## Special Modules
 Most modules here just update one's environment for a single, particular software package, by adding that package's directories to some runtime search path(s).  The modules below are a bit different.  Note that `module show` will print what a given module will do to your environment.
 * clas12
   * loads a bunch of other modules to provide a full CLAS12 environment in one shot
@@ -39,8 +47,8 @@ And these two modules below are required by many other clas12 modules to provide
     * numpy
     * pandas
 
-### Build Structure
-The environment modulefiles here use a particular *relative* directory structure for the software builds they reference:
+## Build Structure
+The environment modulefiles here are relocatable by using a particular *relative* directory structure for the software builds they reference:
 
 - some "top" directory
   - [`modulefiles`](modulefiles) (from this repository)
