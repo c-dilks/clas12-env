@@ -13,7 +13,7 @@ or, from anywhere with CVMFS:
 
 `module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles`
 
-To get the full CLAS12 "production" environment in one shot:
+Then, to get the full CLAS12 "production" environment in one shot:
 
 `module load clas12`
 
