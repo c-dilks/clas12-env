@@ -1,9 +1,8 @@
 # clas12-env
 This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  The main branch is deployed on CVMFS for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
 
-Note:
 - *The modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
-- *The shell `setup.[c]sh` files here are deprecated and only for backward compatibility with previous environment setups.  They should not be used and will be removed in the future.*
+- *The shell `setup.*` files here are deprecated and only for backward compatibility with previous environment setups.  They should not be used and will be removed in the future.*
 
 ## Quick Start
 
@@ -18,6 +17,12 @@ or, from anywhere with CVMFS:
 Then, to get the full CLAS12 "production" environment in one shot:
 
 `module load clas12`
+
+And then you could run stuff, e.g.:
+
+`clas12root -b -q -l mymacro.C`
+
+Note, most modules provide a link to the documentation for the package they support via the `module show` command.
 
 ## Special Modules
 Most modules here just update one's environment for a single, particular software package, by adding that package's directories to some runtime search path(s).  The modules below are a bit different.  Note that `module show` will print what a given module will do to your environment.
@@ -49,12 +54,6 @@ And these two modules below are required by many other clas12 modules to provide
     * pandas
 
 ## Details
-
-### Utilities
-The [`modulefiles/util`](modulefiles/util) directory is both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some general utilities used during environment setup:
-- [`osrelease.py`](modulefiles/util/osrelease.py)
-- [`functions.tcl`](modulefiles/util/functions.tcl)
-- [`.generic`](modulefiles/util/.generic)
   
 ### Build Structure
 The environment modulefiles here are relocatable by using a particular *relative* directory structure for the software builds they reference:
@@ -65,3 +64,9 @@ The environment modulefiles here are relocatable by using a particular *relative
   - `linux-64` (jdks)
   - [[osrelease#1]](modulefiles/util/osrelease.py), e.g. `almalinux9-gcc11`
   - [[osrelease#2]](modulefiles/util/osrelease.py), e.g. `rhel9-gcc11`
+
+### Utilities
+The [`modulefiles/util`](modulefiles/util) directory is both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some general utilities used during environment setup:
+- [`osrelease.py`](modulefiles/util/osrelease.py)
+- [`functions.tcl`](modulefiles/util/functions.tcl)
+- [`.generic`](modulefiles/util/.generic)
