@@ -22,7 +22,7 @@ And then you could run stuff, e.g.:
 
 `clas12root -b -q -l mymacro.C`
 
-Note, most modules provide a link to the documentation for the package they support via the `module show` command.
+*Note, most modules provide a link to the documentation for the package they support via the* `module show` *command.*
 
 ## Special Modules
 Most modules here just update one's environment for a single, particular software package, by adding that package's directories to some runtime search path(s).  The modules below are a bit different.  Note that `module show` will print what a given module will do to your environment.
