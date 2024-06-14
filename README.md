@@ -67,6 +67,7 @@ The environment modulefiles here are relocatable by using a particular *relative
 
 ### Utilities
 The [`modulefiles/util`](modulefiles/util) directory is both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some general utilities used during environment setup:
-- [`osrelease.py`](modulefiles/util/osrelease.py)
-- [`functions.tcl`](modulefiles/util/functions.tcl)
-- [`.generic`](modulefiles/util/.generic)
+- [`osrelease.py`](modulefiles/util/osrelease.py) (prints a string determined by the operating system and compiler, for defining installation paths)
+- [`functions.tcl`](modulefiles/util/functions.tcl) (helper Tcl procedures used in various modulefiles)
+- [`siteconfig.tcl`](modulefiles/util/siteconfig.tcl) (unused, a modulefile configuration for registering Tcl procedures)
+- [`.generic`](modulefiles/util/.generic) (determines a version number from a modulefile's filename and loads its `.common`)
