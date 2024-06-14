@@ -61,28 +61,28 @@ And these two modules below are required by many other clas12 modules to provide
 The environment modulefiles here use a particular relative directory structure for the software builds they reference:
 
 ```
-- some "top" directory
-  - modulefiles (this repository)
-  - noarch (data/shell/Java/Python)
-  - linux-/macos-64 (JDKs)
-  - almalinux9-gcc11
-  - fedora36-gcc12
-  - ...
+└── some "top" directory
+    ├── modulefiles (this repository)
+    ├── noarch (data/shell/Java/Python)
+    ├── linux-/macos-64 (JDKs)
+    ├── almalinux9-gcc11
+    ├── fedora36-gcc12
+    └── ...
 ```
 
 And an example of a small subset of the contents of an "osrelease" subdirectory:
 ```
-- bin
-- lib
-- include
-- local
-   - ccdb
-     - 1.0
-  - clas12root
-    - 1.8.4
-  - iguana
-    - 0.6.0
-    - 0.7.0
+├── bin
+├── lib
+├── include
+└── local
+    ├── ccdb
+    │   └── 1.0
+    ├── clas12root
+    │   └── 1.8.4
+    └── iguana
+        ├── 0.6.0
+        └── 0.7.0
 ```
 
 ### Utilities
