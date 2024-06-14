@@ -45,7 +45,7 @@ And these two modules below are required by many other clas12 modules to provide
     * [fmt](https://github.com/fmtlib/fmt)
     * [yaml-cpp](https://github.com/jbeder/yaml-cpp)
 * pymods
-  * sets `PYTHONPATH` to pickup these pip-installed python packages (and their dependencies):
+  * sets `PYTHONPATH` to pickup these pip-installed packages (and their dependencies):
     * sqlalchemy
     * pymysql
     * ninja
