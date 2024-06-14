@@ -72,17 +72,18 @@ The environment modulefiles here use a particular relative directory structure f
 
 And an example of a small subset of the contents of an "osrelease" subdirectory:
 ```
-├── bin
-├── lib
-├── include
-└── local
-    ├── ccdb
-    │   └── 1.0
-    ├── clas12root
-    │   └── 1.8.4
-    └── iguana
-        ├── 0.6.0
-        └── 0.7.0
+└── almalinux9-gcc11
+    ├── bin
+    ├── lib
+    ├── include
+    └── local
+        ├── ccdb
+        │   └── 1.0
+        ├── clas12root
+        │   └── 1.8.4
+        └── iguana
+            ├── 0.6.0
+            └── 0.7.0
 ```
 
 ### Utilities
