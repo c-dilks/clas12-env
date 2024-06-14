@@ -29,7 +29,7 @@ Most modules here just update one's environment for a single, particular softwar
 * clas12
   * loads a bunch of other modules to provide a full CLAS12 environment in one shot
 * tmpfs
-  * gets various software, e.g., apptainer, to use a `/tmp` alternative, i.e., for when it's mounted noexec
+  * gets various software, e.g., apptainer, to use a `/tmp` alternative, e.g., for when it's mounted noexec
 * geant4
   * initializes [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`
 * scicomp
