@@ -48,15 +48,20 @@ And these two modules below are required by many other clas12 modules to provide
     * numpy
     * pandas
 
-## Build Structure
+## Details
+
+### Utilities
+The [`modulefiles/util`](modulefiles/util) directory is both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some general utilities used during environment setup:
+- [`osrelease.py`](modulefiles/util/osrelease.py)
+- [`functions.tcl`](modulefiles/util/functions.tcl)
+- [`.generic`](modulefiles/util/.generic)
+  
+### Build Structure
 The environment modulefiles here are relocatable by using a particular *relative* directory structure for the software builds they reference:
 
 - some "top" directory
-  - [`modulefiles`](modulefiles) (from this repository)
+  - [`modulefiles`](modulefiles) (this repository)
   - `noarch` (data/shell/python)
   - `linux-64` (jdks)
   - [[osrelease#1]](modulefiles/util/osrelease.py), e.g. `almalinux9-gcc11`
   - [[osrelease#2]](modulefiles/util/osrelease.py), e.g. `rhel9-gcc11`
-  - ...
-
-(Is there a web-based CVMFS browser we could link to?)
