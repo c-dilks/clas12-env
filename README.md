@@ -1,7 +1,9 @@
 # clas12-env
 This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  The main branch is deployed on CVMFS for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
 
-*Note, the modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
+Note:
+- *The modulefiles and software builds for GEANT4/GEMC used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.*
+- *The shell `setup.[c]sh` files here are deprecated and only for backward compatibility with previous environment setups.  They should not be used and will be removed in the future.*
 
 ## Quick Start
 
@@ -16,8 +18,6 @@ or, from anywhere with CVMFS:
 Then, to get the full CLAS12 "production" environment in one shot:
 
 `module load clas12`
-
-*Note, the shell `setup.[c]sh` files here are deprecated and only for backward compatibility with previous environment setups.  They should not be used and will be removed in the future.*
 
 ## Special Modules
 Most modules here just update one's environment for a single, particular software package, by adding that package's directories to some runtime search path(s).  The modules below are a bit different.  Note that `module show` will print what a given module will do to your environment.
