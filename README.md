@@ -60,10 +60,20 @@ The environment modulefiles here are relocatable by using a particular *relative
 
 - some "top" directory
   - [`modulefiles`](modulefiles) (this repository)
-  - `noarch` (data/shell/python)
-  - `linux-64` (jdks)
+  - `noarch` (data/shell/Java/Python)
+  - `linux-64/macos-64` (JDKs)
   - [[osrelease#1]](modulefiles/util/osrelease.py), e.g. `almalinux9-gcc11`
   - [[osrelease#2]](modulefiles/util/osrelease.py), e.g. `rhel9-gcc11`
+
+And an example of an "osrelease" subdirectory:
+  - `bin`
+  - `lib`
+  - `share`
+  - `local`
+    - `clas12root`
+      - `1.8.4`
+    - `iguana`
+      - `0.7.0`
 
 ### Utilities
 The [`modulefiles/util`](modulefiles/util) directory is both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some general utilities used during environment setup:
