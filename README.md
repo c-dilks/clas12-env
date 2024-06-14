@@ -23,16 +23,17 @@ Then, to get the full CLAS12 "production" environment in one shot:
 Most modules here just update one's environment for a single, particular software package, by adding that package's directories to some runtime search path(s).  The modules below are a bit different.  Note that `module show` will print what a given module will do to your environment.
 * clas12
   * loads a bunch of other modules to provide a full CLAS12 environment in one shot
-* geant4
-  * adds [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`, to the search path
-* scicomp
-  * adds [modulefiles from JLab's scicomp group](https://jlab.servicenowservices.com/scicomp?id=kb_article_view&sysparm_article=KB0014671), e.g. `cernlib/2023`, to the search path
 * tmpfs
-  * sets envionment variables to get various software (maven, apptainer, java, things that honor `TMPDIR`, etc.) to use a `/tmp` alternative, e.g. for when it's mounted noexec
+  * gets various software, e.g., apptainer, to use a `/tmp` alternative, i.e., for when it's mounted noexec
+* geant4
+  * initializes [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`
+* scicomp
+  * initializes [modulefiles from JLab's scicomp group](https://jlab.servicenowservices.com/scicomp?id=kb_article_view&sysparm_article=KB0014671), e.g. `cernlib/2023`
+
 
 And these two modules below are required by many other clas12 modules to provide some 3rd-party dependencies:
 * system
-  * sets `OSRELEASE` based on the operating system (via [this script](util/osrelease.py))
+  * sets `OSRELEASE` based on the operating system (via [this script](modulefiles/util/osrelease.py))
   * sets `CLAS12_HOME` (only for convenience)
   * sets `PATH`, `LD_LIBRARY_PATH`, and `PKG_CONFIG_PATH` for these C++ libraries:
     * [fmt](https://github.com/fmtlib/fmt)
@@ -55,8 +56,8 @@ The environment modulefiles here are relocatable by using a particular *relative
   - [`modulefiles`](modulefiles) (from this repository)
   - `noarch` (data/shell/python)
   - `linux-64` (jdks)
-  - [[osrelease#1]](util/osrelease.py), e.g. `almalinux9-gcc11`
-  - [[osrelease#2]](util/osrelease.py), e.g. `rhel9-gcc11`
+  - [[osrelease#1]](modulefiles/util/osrelease.py), e.g. `almalinux9-gcc11`
+  - [[osrelease#2]](modulefiles/util/osrelease.py), e.g. `rhel9-gcc11`
   - ...
 
 (Is there a web-based CVMFS browser we could link to?)
