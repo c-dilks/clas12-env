@@ -70,7 +70,7 @@ The environment modulefiles here use a particular relative directory structure f
     └── ...
 ```
 
-And an example of a small subset of the contents of an "osrelease" subdirectory:
+And an example subset of the contents of an "osrelease" subdirectory:
 ```
 └── almalinux9-gcc11
     ├── bin
