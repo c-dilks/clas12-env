@@ -63,10 +63,10 @@ The environment modulefiles here use a particular relative directory structure f
 ```
 └── some "top" directory
     ├── modulefiles (this repository)
-    ├── noarch (data/shell/Java/Python)
+    ├── noarch (data/shell/Java/Python stuff)
     ├── linux-/macos-64 (JDKs)
-    ├── almalinux9-gcc11
-    ├── fedora36-gcc12
+    ├── almalinux9-gcc11 (C++ stuff)
+    ├── fedora36-gcc12 (C++ stuff)
     └── ...
 ```
 
