@@ -13,10 +13,18 @@ fi
 if [ -z ${home+x} ] && [ -d $home/modulefiles ]; then
     echo 'ERROR:  could not find $CLAS12_HOME.'
 else
-    echo "WARNING:  This setup.sh script is deprecated and will be removed:"
-    echo "WARNING:  <<<<  $home/setup.sh"
-    echo "WARNING:  This should be used instead:"
-    echo "WARNING:  >>>>  module use $home/modulefiles"
     module use $home/modulefiles
+    echo '################################################################################'
+    echo '#  WARNING    WARNING    WARNING    WARNING    WARNING    WARNING    WARNING   #'
+    echo '#                                                                              #'
+    echo '#     The CLAS12 environment setup.*sh scripts are deprecated and will be      #'
+    echo '#        removed in the future.  Switch to this equivalent instead:            #'
+    echo '#                                                                              #'
+    echo '# module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles #'
+    echo '#                                                                              #'
+    echo '#   Or, at JLab only, we can instead use the local filesystem without CVMFS:   #'
+    echo '#                                                                              #'
+    echo '#           module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles             #'
+    echo '################################################################################'
 fi
 

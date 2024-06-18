@@ -31,11 +31,19 @@ else
 endif
 
 if ( ($?clas12_home) && (-d $clas12_home/modulefiles) ) then
-    echo "WARNING:  This setup.csh script is deprecated and will be removed:"
-    echo "WARNING:  <<<<  $clas12_home/setup.csh"
-    echo "WARNING:  This should be used instead:"
-    echo "WARNING:  >>>>  module use $clas12_home/modulefiles"
     module use $clas12_home/modulefiles
+    echo '################################################################################'
+    echo '#  WARNING    WARNING    WARNING    WARNING    WARNING    WARNING    WARNING   #'
+    echo '#                                                                              #'
+    echo '#     The CLAS12 environment setup.*sh scripts are deprecated and will be      #'
+    echo '#        removed in the future.  Switch to this equivalent instead:            #'
+    echo '#                                                                              #'
+    echo '# module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles #'
+    echo '#                                                                              #'
+    echo '#   Or, at JLab only, we can instead use the local filesystem without CVMFS:   #'
+    echo '#                                                                              #'
+    echo '#           module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles             #'
+    echo '################################################################################'
 else
     echo 'ERROR: could not find $CLAS12_HOME.  Note, if you are sourcing this'
     echo 'from another tcsh script, you need to either pass the full path as'
