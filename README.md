@@ -4,7 +4,7 @@ This is a [modulefile](https://modules.sourceforge.net/)-based environment setup
 Note:
 - The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.
 - The shell "setup" files here are deprecated and only for backward compatibility with previous CLAS12 environment setups.
-- This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (and Java components will still work).
+- This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (e.g., Java components should still work).
 
 ## Quick Start
 
@@ -87,7 +87,7 @@ And an example subset of the contents of an "osrelease" subdirectory:
 ```
 
 ### Utilities
-The [`modulefiles/util`](modulefiles/util) directory is both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some general utilities used during environment setup:
+The [`modulefiles/util`](modulefiles/util) directory contains both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some utilities only used during environment setup:
 - [`osrelease.py`](modulefiles/util/osrelease.py) (prints a string determined by the operating system and compiler, for defining installation paths)
 - [`functions.tcl`](modulefiles/util/functions.tcl) (helper Tcl procedures used in various modulefiles)
 - [`siteconfig.tcl`](modulefiles/util/siteconfig.tcl) (unused, a modulefile configuration for registering Tcl procedures)
