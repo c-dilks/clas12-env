@@ -32,18 +32,39 @@ endif
 
 if ( ($?clas12_home) && (-d $clas12_home/modulefiles) ) then
     module use $clas12_home/modulefiles
-    echo '################################################################################'
-    echo '#  WARNING    WARNING    WARNING    WARNING    WARNING    WARNING    WARNING   #'
-    echo '#                                                                              #'
-    echo '#     The CLAS12 environment setup.*sh scripts are deprecated and will be      #'
-    echo '#        removed in the future.  Switch to this equivalent instead:            #'
-    echo '#                                                                              #'
-    echo '# module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles #'
-    echo '#                                                                              #'
-    echo '#   Or, at JLab only, we can instead use the local filesystem without CVMFS:   #'
-    echo '#                                                                              #'
-    echo '#           module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles             #'
-    echo '################################################################################'
+    set h=`hostname | awk -F. '{print$1}'`
+    grep -q -i -e alma -e plow /etc/redhat-release
+    if ( $status ) then
+        echo '################################################################################'
+        echo '#  WARNING    WARNING    WARNING    WARNING    WARNING    WARNING    WARNING   #'
+        echo '#                                                                              #'
+        echo "#     \!\!\!\!\! You are on an old el7 machine named $h \!\!\!\!\!                #"
+        echo '#                                                                              #'
+        echo "# JLab is in the process of retiring el7 (RHEL7/centos7) machines at JLab.     #"
+        echo "# CLAS12 software builds for el7 stopped being updated in March 2024.          #"
+        echo '#                                                                              #'
+        echo "# Your options include:                                                        #"
+        echo "# 1. Login to an el9 machine                                                   #"
+        echo '# 2. Use the old el7 builds via "source /group/clas12/packages/setup.[c]sh"    #'
+        echo '# 3. Do nothing.  Some things will still work, e.g., "module load coatjava"    #'
+        echo '#                                                                              #'
+        echo '################################################################################'
+        echo
+    else     
+        echo '################################################################################'
+        echo '#  WARNING    WARNING    WARNING    WARNING    WARNING    WARNING    WARNING   #'
+        echo '#                                                                              #'
+        echo '#     The CLAS12 environment setup.*sh scripts are deprecated and will be      #'
+        echo '#      removed in the future.  Switch to this equivalent at JLab instead:      #'
+        echo '#                                                                              #'
+        echo '#           module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles             #'
+        echo '#                                                                              #'
+        echo '#                           Or, via CVMFS:                                     #'
+        echo '#                                                                              #'
+        echo '# module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles #'
+        echo '#                                                                              #'
+        echo '################################################################################'
+    endif
 else
     echo 'ERROR: could not find $CLAS12_HOME.  Note, if you are sourcing this'
     echo 'from another tcsh script, you need to either pass the full path as'
