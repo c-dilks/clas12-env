@@ -1,8 +1,7 @@
 module-whatis https://github.com/jeffersonlab/iguana
 
 prereq system
-prereq $hipo_prereq
-prereq pymods
+prereq --optional pymods
 
 conflict iguana
 
