@@ -2,9 +2,9 @@
 This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  The main branch is deployed on CVMFS for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
 
 Note:
+- This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (*and Java components should still work*).
 - The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.
-- The shell "setup" files here are deprecated and only for backward compatibility with previous CLAS12 environment setups.
-- This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (e.g., Java components should still work).
+- *The shell "setup.\*sh" files are deprecated and will be removed by 2025*.  They are only for temporary, backward compatibility.
 
 ## Quick Start
 
@@ -20,11 +20,23 @@ Then, to get the latest CLAS12 environment in one shot:
 
 `module load clas12`
 
-And then you could run stuff, e.g.:
+And then you can do stuff, e.g.:
+
+`ccdb -i`
+
+`gcc -o myana.exe -L$HIPO/lib -lhipo4 myana.c ...`
 
 `clas12root -b -q -l mymacro.C`
 
-*Note, most modules provide a link to the documentation for the package they support via the* `module show` *command.*
+Note, most modules provide a link to the documentation for the package they support via the `module show` command, e.g.,
+```
+ifarm> module show iguana/0.7.0
+-------------------------------------------------------------------
+module-whatis   https://github.com/jeffersonlab/iguana
+prereq          hipo/4.1.0
+etc ...
+-------------------------------------------------------------------
+```
 
 ## Special Modules
 Most modules here just update one's environment for a single, particular software package, by adding that package's directories to some runtime search path(s).  The modules below are a bit different.  Note that `module show` will print what a given module will do to your environment.
