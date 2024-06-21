@@ -28,12 +28,13 @@ And then you can do stuff, e.g.:
 
 `clas12root -b -q -l mymacro.C`
 
-Note, most modules provide a link to the documentation for the package they support via the `module show` command, e.g.,
+Note, the `module show` command prints what a given module will do to your environment, and usually includes a link to the documentation for the package they support, e.g.,
 ```
 ifarm> module show iguana/0.7.0
 -------------------------------------------------------------------
 module-whatis   https://github.com/jeffersonlab/iguana
 prereq          hipo/4.1.0
+setenv          IGUANA /path/to/iguana/0.7.0
 etc ...
 -------------------------------------------------------------------
 ```
