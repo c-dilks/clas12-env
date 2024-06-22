@@ -24,6 +24,8 @@ And then you can do stuff, e.g.:
 
 `ccdb -i`
 
+`recon-util -h`
+
 `gcc -o myana.exe -L$HIPO/lib -lhipo4 myana.c ...`
 
 `clas12root -b -q -l mymacro.C`
