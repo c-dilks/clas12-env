@@ -28,7 +28,7 @@ And then you can do stuff, e.g.:
 
 `clas12root -b -q -l mymacro.C`
 
-Note, the `module show` command prints what a given module will do to your environment, and usually includes a link to the documentation for the package they support, e.g.,
+Note, the `module show` command prints what a given module will do to your environment, and usually includes a link to the documentation for the package it supports, e.g.,
 ```
 ifarm> module show iguana/0.7.0
 -------------------------------------------------------------------
