@@ -7,9 +7,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: test0
-        run: echo Hello from the Organization
-      - name: test1
+      - uses: cvmfs-contrib/github-action-cvmfs@v3
+        with:
+          cvmfs_repositories: 'oasis.opensciencegrid.org'
+      - name: install
         run: sudo apt-get install environment-modules
-      - name: test2
+      - name: setup
         run: source /etc/profile.d/modules.sh && module avail
+      - name: test
+        run: which module
