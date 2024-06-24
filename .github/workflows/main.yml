@@ -1,6 +1,7 @@
 name: clas12 environment modules CI
 on:
-  pull_request:
+  push:
+    branches: [ ci ]
 jobs:
   build:
     runs-on: ubuntu-latest
