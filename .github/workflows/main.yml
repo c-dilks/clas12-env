@@ -11,9 +11,13 @@ jobs:
 #        with:
 #          cvmfs_repositories: 'oasis.opensciencegrid.org'
       - name: install
-        run: sudo apt-get install environment-modules
-      - name: setup
-        run: source /etc/profile.d/modules.sh && module avail
-      - name: test
-        run: ./.github/workflows/test.sh ./modulefiles
+        run: |
+          sudo apt-get install gcc environment-modules
+          source /etc/profile.d/modules.sh
+          module --version
+          wget https://github.com/cea-hpc/modules/releases/download/v5.4.0/modules-5.4.0.tar.gz
+          tar -xzvf modules-5.4.0.tar.gz
+          cd modules-5.4.0 && make
+          . ./modules-5.4.0/init/bash
+          ./.github/workflows/test.sh ./modulefiles
 
