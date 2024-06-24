@@ -28,6 +28,7 @@ jobs:
           . ./modules/init/bash
           module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles
           module avail
+          for x in ./modulefiles/*; do x=$(basename $x) && module load $x && module unload $x; done
           module load clas12
           java -version
 
