@@ -7,5 +7,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run a one-line script
+      - name: test0
         run: echo Hello from the Organization
+      - name: test1
+        run: apt-get install environment-modules
