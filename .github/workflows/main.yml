@@ -7,21 +7,22 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-#      - uses: cvmfs-contrib/github-action-cvmfs@v3
-#        with:
-#          cvmfs_repositories: 'oasis.opensciencegrid.org'
+      - uses: cvmfs-contrib/github-action-cvmfs@v3
+        with:
+          cvmfs_repositories: 'oasis.opensciencegrid.org'
       - name: install
         run: |
           sudo apt-get install tcl-dev environment-modules
           wget https://github.com/cea-hpc/modules/releases/download/v5.4.0/modules-5.4.0.tar.gz
           tar -xzf modules-5.4.0.tar.gz
-          cd modules-5.4.0
-          ./configure --prefix=$PWD/../modules && make && make install
-          cd ..
+          cd modules-5.4.0 && ./configure --prefix=$PWD/../modules && make && make install
+      - name: test
+        run: |
           . ./modules/init/bash
           module --version
           module use ./modulefiles
           module avail
           module load clas12
           module list
+          decoder -h
 
