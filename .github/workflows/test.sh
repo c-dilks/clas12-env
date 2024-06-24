@@ -1,5 +1,6 @@
 #!/bin/bash
 echo DOGGY
+pwd
 source /etc/profile.d/modules.sh
 module use $1/modulefiles
 module avail
