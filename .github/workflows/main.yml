@@ -16,8 +16,8 @@ jobs:
           source /etc/profile.d/modules.sh
           module --version
           wget https://github.com/cea-hpc/modules/releases/download/v5.4.0/modules-5.4.0.tar.gz
-          tar -xzvf modules-5.4.0.tar.gz
-          cd modules-5.4.0 && make
+          tar -xzf modules-5.4.0.tar.gz
+          cd modules-5.4.0 && ./configure && make
           . ./modules-5.4.0/init/bash
           ./.github/workflows/test.sh ./modulefiles
 
