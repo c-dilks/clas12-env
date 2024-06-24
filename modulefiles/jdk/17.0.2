@@ -8,6 +8,8 @@ set v 17.0.2
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
-setenv JAVA_HOME [home]/[osrelease]/jdk/$v
-prepend-path PATH [home]/[osrelease]/jdk/$v/bin
+if [warndir [home]/[osrelease]/jdk/$v/bin "Java is not available for [osrelease]"] {
+    setenv JAVA_HOME [home]/[osrelease]/jdk/$v
+    prepend-path PATH [home]/[osrelease]/jdk/$v/bin
+}
 

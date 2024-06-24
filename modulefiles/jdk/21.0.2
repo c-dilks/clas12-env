@@ -6,6 +6,8 @@ set v 21.0.2
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
-setenv JAVA_HOME [home]/[osrelease]/local/jdk/$v
-prepend-path PATH [home]/[osrelease]/local/jdk/$v/bin
+if [warndir [home]/[osrelease]/jdk/$v/bin "Java is not available for [osrelease]"] {
+    setenv JAVA_HOME [home]/[osrelease]/local/jdk/$v
+    prepend-path PATH [home]/[osrelease]/local/jdk/$v/bin
+}
 
