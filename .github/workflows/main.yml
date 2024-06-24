@@ -10,4 +10,4 @@ jobs:
       - name: test0
         run: echo Hello from the Organization
       - name: test1
-        run: apt-get install environment-modules
+        run: sudo apt-get install environment-modules
