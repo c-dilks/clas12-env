@@ -24,5 +24,9 @@ jobs:
           module avail
           module load clas12
           module list
+          module unuse ./modulefiles
+          module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles
+          module load clas12
           decoder -h
+
 
