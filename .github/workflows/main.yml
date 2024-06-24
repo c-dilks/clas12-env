@@ -15,4 +15,5 @@ jobs:
       - name: setup
         run: source /etc/profile.d/modules.sh && module avail
       - name: test
-        run: which module
+        run: ./.github/workflows/test.sh ./modulefiles
+

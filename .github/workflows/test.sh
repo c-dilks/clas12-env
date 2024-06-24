@@ -1,5 +1,4 @@
 #!/bin/bash
-
 source /etc/profile.d/modules.sh
 module use $1/modulefiles
 module avail
