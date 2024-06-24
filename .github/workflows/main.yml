@@ -11,3 +11,5 @@ jobs:
         run: echo Hello from the Organization
       - name: test1
         run: sudo apt-get install environment-modules
+      - name: test2
+        run: which module
