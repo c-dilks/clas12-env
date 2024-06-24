@@ -30,6 +30,5 @@ jobs:
           module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles
           module avail
           module load clas12
-          decoder -h
-
+          java -version
 
