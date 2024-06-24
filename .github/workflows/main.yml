@@ -16,9 +16,10 @@ jobs:
           wget https://github.com/cea-hpc/modules/releases/download/v5.4.0/modules-5.4.0.tar.gz
           tar -xzf modules-5.4.0.tar.gz
           cd modules-5.4.0 && ./configure --prefix=$PWD/../modules && make && make install
+          pwd
+          ls -l
           . ./modules/init/bash
           module --version
-          ./.github/workflows/test.sh ./modulefiles
           module use ./modulefiles
           module avail
           module load clas12
