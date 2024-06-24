@@ -9,10 +9,9 @@ prereq root
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
-set v [getvenv HIPO]
-setenv CLAS12ROOT [home]/[osrelease]/local/clas12root/$version/$v
+setenv CLAS12ROOT [home]/[osrelease]/local/clas12root/$version/[getvenv HIPO]
 
-warndir $env(CLAS12ROOT) "clas12root/$version is not available for hipo/$v"
+warndir $env(CLAS12ROOT) "clas12root/$version is not available for hipo/[getvenv HIPO]"
 
 prepend-path PATH $env(CLAS12ROOT)/bin
 prepend-path LD_LIBRARY_PATH $env(CLAS12ROOT)/lib

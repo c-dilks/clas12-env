@@ -7,10 +7,9 @@ conflict iguana
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
-set v [getvenv HIPO]
-set d [home]/[osrelease]/local/iguana/$version/$v
+set d [home]/[osrelease]/local/iguana/$version/[getvenv HIPO]
 
-warndir $d "iguana/$version is not available for hipo/$v"
+warndir $d "iguana/$version is not available for hipo/[getvenv HIPO]"
 
 setenv IGUANA $d
 prepend-path PATH $d/bin
