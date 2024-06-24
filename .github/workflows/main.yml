@@ -12,4 +12,4 @@ jobs:
       - name: test1
         run: sudo apt-get install environment-modules
       - name: test2
-        run: which module
+        run: module avail
