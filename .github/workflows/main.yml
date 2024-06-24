@@ -16,7 +16,7 @@ jobs:
           wget https://github.com/cea-hpc/modules/releases/download/v5.4.0/modules-5.4.0.tar.gz
           tar -xzf modules-5.4.0.tar.gz
           cd modules-5.4.0 && ./configure --prefix=$PWD/../modules && make && make install
-      - name: test
+      - name: test-local
         run: |
           . ./modules/init/bash
           module --version
@@ -24,8 +24,11 @@ jobs:
           module avail
           module load clas12
           module list
-          module unuse ./modulefiles
+      - name: test-cvmfs
+        run: |
+          . ./modules/init/bash
           module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles
+          module avail
           module load clas12
           decoder -h
 
