@@ -1,6 +1,6 @@
 # clas12-env
 [![Build Status](https://github.com/jeffersonlab/clas12-env/workflows/clas12-env-ci/badge.svg)](https://github.com/jeffersonlab/clas12-env/actions)
-name: clas12 environment modules CI
+
 This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  The main branch is deployed on CVMFS for running software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
 
 Note:
