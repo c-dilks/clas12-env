@@ -13,11 +13,14 @@ jobs:
       - name: install
         run: |
           sudo apt-get install tcl-dev environment-modules
-          source /etc/profile.d/modules.sh
-          module --version
           wget https://github.com/cea-hpc/modules/releases/download/v5.4.0/modules-5.4.0.tar.gz
           tar -xzf modules-5.4.0.tar.gz
-          cd modules-5.4.0 && ./configure --prefix=$PWD/../modules && make
+          cd modules-5.4.0 && ./configure --prefix=$PWD/../modules && make && make install
           . ./modules/init/bash
+          module --version
           ./.github/workflows/test.sh ./modulefiles
+          module use ./modulefiles
+          module avail
+          module load clas12
+          module list
 
