@@ -12,7 +12,7 @@ Note:
 
 Only at JLab:
 
-```rebol
+```erl
 module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles
 ```
 
@@ -53,7 +53,8 @@ Most modules here just update one's environment for a single, particular softwar
 * clas12
   * loads a bunch of other modules to provide a full CLAS12 environment in one shot
 * tmpfs
-  * gets various software, e.g., apptainer, to use a `/tmp` alternative, e.g., for when it's mounted noexec
+  * gets various software, e.g., [apptainer](https://apptainer.org), to use a `/tmp` alternative, e.g., for when it's mounted noexec
+  * *Note, coatjava versions prior to 10.0.1 require this on AlmaLinux9 at JLab for SQLite support*
 * geant4
   * initializes [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`
 * scicomp
