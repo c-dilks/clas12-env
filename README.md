@@ -12,28 +12,33 @@ Note:
 
 Only at JLab:
 
-`module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles`
+```rebol
+module use /scigroup/cvmfs/hallb/clas12/sw/modulefiles
+```
 
 or, from anywhere with CVMFS:
 
-`module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles`
+```erl
+module use /cvmfs/oasis.opensciencegrid.org/jlab/hallb/clas12/sw/modulefiles
+```
 
 Then, to get the latest CLAS12 environment in one shot:
 
-`module load clas12`
+```erl
+module load clas12
+```
 
 And then you can do stuff, e.g.:
 
-`ccdb -i`
-
-`recon-util -h`
-
-`gcc -o myana.exe -L$HIPO/lib -lhipo4 myana.c ...`
-
-`clas12root -b -q -l mymacro.C`
+```erl
+ccdb -i
+recon-util -h
+gcc -o myana.exe -L$HIPO/lib -lhipo4 myana.c ...
+clas12root -b -q -l mymacro.C
+```
 
 Note, the `module show` command prints what a given module will do to your environment, and usually includes a link to the documentation for the package it supports, e.g.,
-```
+```erl
 ifarm> module show iguana/0.7.0
 -------------------------------------------------------------------
 module-whatis   https://github.com/jeffersonlab/iguana
@@ -77,18 +82,17 @@ And these two modules below are required by many other clas12 modules to provide
 ### Directory Structure
 The environment modulefiles here use a particular relative directory structure for the software builds they reference:
 
-```
+```boo
 └── some "top" directory
     ├── modulefiles (this repository)
-    ├── noarch (data/shell/Java/Python stuff)
-    ├── linux-/macos-64 (JDKs)
-    ├── almalinux9-gcc11 (C++ stuff)
-    ├── fedora36-gcc12 (C++ stuff)
+    ├── noarch (Java/Python/SQLite)
+    ├── almalinux9-gcc11 (C++/Python/JDK)
+    ├── fedora36-gcc12 (C++/Python/JDK)
     └── ...
 ```
 
 And an example subset of the contents of an "osrelease" subdirectory:
-```
+```boo
 └── almalinux9-gcc11
     ├── bin
     ├── lib
