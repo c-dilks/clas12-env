@@ -75,7 +75,6 @@ And these two modules below are required by many other clas12 modules to provide
     * ninja
     * jinja
     * meson
-    * numpy
     * pandas
 
 ## Details
