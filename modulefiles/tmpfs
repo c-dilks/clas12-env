@@ -20,7 +20,7 @@ proc settmp {tmpdir} {
             if [module-info mode load] {
                 file mkdir $::env(APPTAINER_CACHEDIR) $::env(APPTAINER_TMPDIR)
                 file mkdir $::env(TMPDIR)/maven.m2 $::env(TMPDIR)/jansi.tmpdir
-                file mkdir $::env(TMPDIR)/java.io.tmpdir $::env(TMPDIR)/org.sqlite/tmpdir
+                file mkdir $::env(TMPDIR)/java.io.tmpdir $::env(TMPDIR)/org.sqlite.tmpdir
             }
             return 1
         }
