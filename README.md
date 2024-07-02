@@ -54,7 +54,7 @@ Most modules here just update one's environment for a single, particular softwar
   * loads a bunch of other modules to provide a full CLAS12 environment in one shot
 * tmpfs
   * gets various software, e.g., [apptainer](https://apptainer.org), to use a `/tmp` alternative, e.g., for when it's mounted noexec
-  * *Note, coatjava versions prior to [10.0.1](https://github.com/JeffersonLab/coatjava/releases/tag/10.1.0) require this on AlmaLinux9 at JLab for SQLite support*
+  * *Note, coatjava versions prior to [10.1.0](https://github.com/JeffersonLab/coatjava/releases/tag/10.1.0) require this on el9 at JLab for SQLite support*
 * geant4
   * initializes [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`
 * scicomp
