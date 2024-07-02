@@ -1,7 +1,7 @@
 # clas12-env
 [![Build Status](https://github.com/jeffersonlab/clas12-env/workflows/clas12-env-ci/badge.svg)](https://github.com/jeffersonlab/clas12-env/actions)
 
-This repository is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  Its main branch is maintained on CVMFS for running at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
+This repository is just a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  Its main branch is maintained on CVMFS for running at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
 
 Note:
 - *The shell "setup.\*sh" files are deprecated, will be removed by 2025, and exist only temporarily for backward compatibility.*
