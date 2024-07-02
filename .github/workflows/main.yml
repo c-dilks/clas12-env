@@ -28,6 +28,7 @@ jobs:
           module avail
           for x in ./modulefiles/*; do x=$(basename $x) && module load $x && module unload $x; done
           module load clas12
-          decoder -h || true
           java -version
+          which decoder
+          decoder -h || true
 
