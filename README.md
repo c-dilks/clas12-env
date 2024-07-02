@@ -4,7 +4,7 @@
 This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  The main branch is deployed on CVMFS for running at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
 
 Note:
-- *The shell "setup.\*sh" files are deprecated and will be removed by 2025*.  They are only temporary for backward compatibility.
+- *The shell "setup.\*sh" files are deprecated, will be removed by 2025, and exist only temporarily for backward compatibility.*
 - This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (and Java components *should* still work).
 - The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.
 
