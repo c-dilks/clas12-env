@@ -1,5 +1,3 @@
-prereq ccdb
-prereq rcdb
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
