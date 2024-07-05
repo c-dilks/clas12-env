@@ -2,7 +2,7 @@
 
 module-whatis https://root.cern.ch
 
-prereq system
+prereq python/3.12.4
 
 conflict root
 
