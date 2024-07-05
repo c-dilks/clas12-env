@@ -4,5 +4,8 @@ module-whatis https://python.org
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
-prepend-path PATH [home]/[osrelease]/local/python/3.12.4/bin
+set v 3.12.4
+
+prepend-path PATH [home]/[osrelease]/local/python/$v/bin
+prepend-path LD_LIBRARY_PATH [home]/[osrelease]/local/python/$v/lib
 
