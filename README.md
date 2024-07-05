@@ -72,6 +72,7 @@ And these two modules below are required by many other clas12 modules to provide
   * sets `PYTHONPATH` to pickup these pip-installed packages (and their dependencies):
     * sqlalchemy
     * pymysql
+    * ply
     * ninja
     * jinja
     * meson
