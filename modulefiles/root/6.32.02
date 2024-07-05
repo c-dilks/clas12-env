@@ -1,0 +1,18 @@
+#%Module1.0
+
+module-whatis https://root.cern.ch
+
+prereq system
+
+conflict root
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+set top [home]/[osrelease]/local/root/6.32.02
+
+setenv ROOTSYS $top
+
+prepend-path PATH $top/bin
+prepend-path LD_LIBRARY_PATH $top/lib
+prepend-path PYTHONPATH $top/lib
+
