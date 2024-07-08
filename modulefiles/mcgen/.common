@@ -27,6 +27,8 @@ setenv GENEPI $d/genepi
 setenv GENIE $d/genie
 setenv GIBUU $d/gibuu
 
+setenv PYTHIA8DATA $d/share/Pythia8/xmldoc
+
 setenv LHAPDF_DATA_PATH /cvmfs/sft.cern.ch/lcg/external/lhapdfsets/current
 append-path LHAPDF_DATA_PATH $d/share/LHAPDF/
 
