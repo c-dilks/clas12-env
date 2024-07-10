@@ -51,4 +51,13 @@ proc warndir {path msg} {
     return 0
 }
 
+proc prereq_optional {name} {
+    if [is-avail $name] {
+        if [expr {[versioncmp $::ModuleToolVersion 5.2] < 0}] {
+            prereq $name
+        } else {
+            prereq --optional $name
+        }
+    }
+}
 

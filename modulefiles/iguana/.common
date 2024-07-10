@@ -1,11 +1,11 @@
 module-whatis https://github.com/jeffersonlab/iguana
 
-prereq system
-prereq --optional pymods
-
 conflict iguana
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+prereq system
+prereq_optional pymods
 
 set d [home]/[osrelease]/local/iguana/$version/[getvenv HIPO]
 

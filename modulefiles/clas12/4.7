@@ -2,38 +2,40 @@
 
 module-whatis full clas12 environment, https://github.com/jeffersonlab/clas12-env
 
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
 prereq system
 
 # scicomp:
-prereq --optional scicomp
-prereq --optional cernlib/2023
+prereq_optional scicomp
+prereq_optional cernlib/2023
 
 # java:
-prereq --optional jdk/17.0.2
-prereq --optional maven/3.9.0
-prereq --optional groovy/4.0.3
-prereq --optional coatjava/10.1.1
-prereq --optional ced/1.6.1
-prereq --optional mon12/7.2
+prereq_optional jdk/17.0.2
+prereq_optional maven/3.9.0
+prereq_optional groovy/4.0.3
+prereq_optional coatjava/10.1.1
+prereq_optional ced/1.6.1
+prereq_optional mon12/7.2
 
 # c+++:
-prereq --optional cmake/3.29.0
-prereq --optional julia/1.10.2
-prereq --optional root/6.30.04
-prereq --optional ccdb/1.99.2
-prereq --optional rcdb/1.99.0
-prereq --optional qadb/1.3.0
-prereq --optional hipo/4.0.1
-prereq --optional denoise/4.0.1
-prereq --optional iguana/0.5.0
-prereq --optional clas12root/1.8.3
-prereq --optional mcgen/3.10
+prereq_optional cmake/3.29.0
+prereq_optional julia/1.10.2
+prereq_optional root/6.30.04
+prereq_optional ccdb/1.99.2
+prereq_optional rcdb/1.99.0
+prereq_optional qadb/1.3.0
+prereq_optional hipo/4.0.1
+prereq_optional denoise/4.0.1
+prereq_optional iguana/0.5.0
+prereq_optional clas12root/1.8.3
+prereq_optional mcgen/3.10
 
 # python:
-prereq --optional pymods/3.9
-prereq --optional util
+prereq_optional pymods/3.9
+prereq_optional util
 
 # gemc:
-prereq --optional geant4
-#prereq --optional gemc/5.9
+prereq_optional geant4
+#prereq_optional gemc/5.9
 
