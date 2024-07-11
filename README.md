@@ -110,7 +110,7 @@ And an example subset of the contents of an "osrelease" subdirectory:
 
 ### Utilities
 The [`modulefiles/util`](modulefiles/util) directory contains both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and some scripts used only during environment setup:
-- [`osrelease.py`](modulefiles/util/osrelease.py) (prints a string determined by the operating system and compiler, for defining installation paths)
-- [`functions.tcl`](modulefiles/util/functions.tcl) (helper Tcl procedures used in various modulefiles)
-- [`siteconfig.tcl`](modulefiles/util/siteconfig.tcl) (unused, a modulefile configuration for registering Tcl procedures)
-- [`.generic`](modulefiles/util/.generic) (determines a version number from a modulefile's filename and loads its `.common`)
+- [`osrelease.py`](modulefiles/util/osrelease.py) prints a string determined by the operating system and compiler, for defining installation paths
+- [`functions.tcl`](modulefiles/util/functions.tcl) helper Tcl procedures used in various modulefiles
+- [`siteconfig.tcl`](modulefiles/util/siteconfig.tcl) unused, a modulefile configuration for registering Tcl procedures
+- [`.generic`](modulefiles/util/.generic) determines a version number from a modulefile's filename and loads its `.common`
