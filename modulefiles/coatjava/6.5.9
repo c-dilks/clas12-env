@@ -5,6 +5,8 @@ set coatjava 6.5.9
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
+prereq_optional tmpfs
+
 setenv COATJAVA [home]/noarch/coatjava/${coatjava}
 setenv CLAS12DIR [home]/noarch/coatjava/${coatjava}
 setenv CLARA_HOME [home]/noarch/clara/${clara}_${coatjava}
