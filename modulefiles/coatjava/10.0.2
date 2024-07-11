@@ -1,1 +1,18 @@
-.generic
+#%Module1.0
+
+module-whatis https://github.com/jeffersonlab/coatjava
+
+set clara 5.0.2
+set coatjava [file tail [module-info version [module-info name]]]
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+prereq_optional tmpfs
+
+setenv COATJAVA [home]/noarch/coatjava/${coatjava}
+setenv CLAS12DIR [home]/noarch/coatjava/${coatjava}
+setenv CLARA_HOME [home]/noarch/clara/${clara}_${coatjava}
+
+prepend-path PATH $env(COATJAVA)/bin
+prepend-path PATH $env(CLARA_HOME)/bin
+
