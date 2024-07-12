@@ -1,16 +1,1 @@
-#%Module1.0
-
-set clara 5.0.2
-set coatjava 6.5.6.1
-
-source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
-
-prereq_optional tmpfs
-
-setenv COATJAVA [home]/noarch/coatjava/${coatjava}
-setenv CLAS12DIR [home]/noarch/coatjava/${coatjava}
-setenv CLARA_HOME [home]/noarch/clara/${clara}_${coatjava}
-
-prepend-path PATH $env(COATJAVA)/bin
-prepend-path PATH $env(CLARA_HOME)/bin
-
+.generic-tmpfs

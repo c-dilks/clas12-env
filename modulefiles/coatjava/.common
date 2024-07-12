@@ -1,7 +1,5 @@
 module-whatis https://github.com/jeffersonlab/coatjava
 
-source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
-
 setenv COATJAVA [home]/noarch/coatjava/${coatjava}
 setenv CLAS12DIR [home]/noarch/coatjava/${coatjava}
 setenv CLARA_HOME [home]/noarch/clara/${clara}_${coatjava}
