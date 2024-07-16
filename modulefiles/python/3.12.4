@@ -7,7 +7,9 @@ conflict pymods
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 set v 3.12.4
+set s [join [lrange [split $v .] 0 1] {.}]
 
 prepend-path PATH [home]/[osrelease]/local/python/$v/bin
 prepend-path LD_LIBRARY_PATH [home]/[osrelease]/local/python/$v/lib
+prepend-path PYTHONPATH [home]/[osrelease]/local/python/$v/lib/python$s/site-packages
 
