@@ -6,7 +6,7 @@ This is a [modulefile](https://modules.sourceforge.net/)-based environment setup
 Note:
 - *The shell "setup.\*sh" files are deprecated, will be removed by 2025, and exist only temporarily for backward compatibility.*
 - This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (and Java components *should* still work).
-- The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.
+- The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://jeffersonlab.github.io/g4home) and can be used independently.
 
 ## Quick Start
 
