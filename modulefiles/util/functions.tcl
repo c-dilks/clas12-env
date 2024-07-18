@@ -1,9 +1,8 @@
 
 # get an environment variable, with a default if it doesn't exist:
 proc getenv {name default} {
-    global env
-    if { [ info exists env($name) ] } {
-        return $env($name)
+    if { [ info exists ::env($name) ] } {
+        return $::env($name)
     }
     return $default
 }
@@ -24,9 +23,8 @@ proc home {} {
 # run our script to get what it will become upon loading modules:
 # (Note, we don't use our getenv here for performance reasons.)
 proc osrelease {} {
-    global env
-    if { [ info exists env(OSRELEASE) ] } {
-        return $env(OSRELEASE)
+    if { [ info exists ::env(OSRELEASE) ] } {
+        return $::env(OSRELEASE)
     }
     return [ exec [home]/modulefiles/util/osrelease.py ]
 }
