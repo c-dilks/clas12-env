@@ -1,0 +1,30 @@
+#%Module1.0
+
+module-whatis modulefiles for software provided by JLab's IT division, e.g. cernlib
+
+source [file dirname $ModulesCurrentModulefile]/util/functions.tcl
+
+set releases [dict create almalinux9-gcc11 el9]
+set prefixes [list /scigroup/cvmfs/scicomp/sw /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw]
+
+set success 0
+
+if [dict exists $releases [osrelease]] {
+    set os [dict get $releases [osrelease]]
+    foreach prefix $prefixes {
+        if [file isdirectory $prefix/$os/modulefiles] {
+            module use -a $prefix/$os/modulefiles
+            set success 1
+            break
+        }
+    }
+    if {[module-info mode display] || [module-info mode load]} {
+        if {$success == 0} {
+            warn "cannot find JLab scicomp modules for [dict get $releases [osrelease]] at any of:"
+            warn [join $prefixes ,]
+        }
+    }
+} elseif {[module-info mode display] || [module-info mode load]} {
+    warn "[osrelease] is not supported by JLab scicomp."
+}
+

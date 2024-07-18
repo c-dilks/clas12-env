@@ -1,9 +1,9 @@
+#%Module1.0
 module-whatis https://github.com/jeffersonlab/clas12-mcgen
 
-prereq system
-prereq root
-
 conflict mcgen
+
+prereq system
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
