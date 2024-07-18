@@ -20,7 +20,7 @@ if [dict exists $releases [osrelease]] {
     }
     if {[module-info mode display] || [module-info mode load]} {
         if {$success == 0} {
-            warn "cannot find JLab scicomp modules for [dict get $releases [osrelease]] at any of:"
+            warn "cannot find JLab scicomp modules for $os at any of:"
             warn [join $prefixes ,]
         }
     }
