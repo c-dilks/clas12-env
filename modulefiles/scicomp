@@ -7,21 +7,24 @@ source [file dirname $ModulesCurrentModulefile]/util/functions.tcl
 set releases [dict create almalinux9-gcc11 el9]
 set prefixes [list /scigroup/cvmfs/scicomp/sw /cvmfs/oasis.opensciencegrid.org/jlab/scicomp/sw]
 
+set success 0
+
 if [dict exists $releases [osrelease]] {
-    set found 0
     set os [dict get $releases [osrelease]]
     foreach prefix $prefixes {
         if [file isdirectory $prefix/$os/modulefiles] {
             module use -a $prefix/$os/modulefiles
-            set found 1
+            set success 1
             break
         }
     }
-    if {$found == 0} {
-        warn "cannot find JLab scicomp modules for [dict get $releases [osrelease]] at any of:"
-        warn [join $prefixes ,]
+    if {[module-info mode display] || [module-info mode load]} {
+        if {$success == 0} {
+            warn "cannot find JLab scicomp modules for [dict get $releases [osrelease]] at any of:"
+            warn [join $prefixes ,]
+        }
     }
-} else {
+} elseif {[module-info mode display] || [module-info mode load]} {
     warn "[osrelease] is not supported by JLab scicomp."
 }
 
