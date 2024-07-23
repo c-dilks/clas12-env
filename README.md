@@ -63,7 +63,7 @@ Most modules here just update one's environment for a single, particular softwar
 And these two modules below are required by many other clas12 modules to provide some 3rd-party dependencies:
 * system
   * sets `OSRELEASE` based on the operating system, via [this script](modulefiles/util/osrelease.py) (only for convenience)
-  * sets `CLAS12_HOME` (only for convenience)
+  * sets `CLAS12_HOME` based on the filesystem location of these modulefiles (only for convenience)
   * sets `PATH`, `LD_LIBRARY_PATH`, and `PKG_CONFIG_PATH` for these C++ libraries:
     * [fmt](https://github.com/fmtlib/fmt)
     * [yaml-cpp](https://github.com/jbeder/yaml-cpp)
