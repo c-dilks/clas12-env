@@ -23,6 +23,6 @@ trace add variable ::g_modrcAliases write addSiteProcsToItrpAliasList
 
 # list all site-specific procedures to expose to modulefile and modulerc
 # interpreter contexts:
-set g_siteProcsToExposeToItrp [list getenv getvenv home osrelease err warn warndir]
+set g_siteProcsToExposeToItrp [list getvenv home osrelease warndir]
 
 

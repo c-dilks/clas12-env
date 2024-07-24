@@ -30,10 +30,10 @@ proc settmp {tmpdir} {
     return 0
 }
 
-if {! [settmp /scratch/$env(USER)/tmp] } {
+if {! [settmp /scratch2/$env(USER)/tmp] } {
     if {! [settmp [getenv SLURM_JOB_WORK_DIR {}]/tmp] } {
-        if {! [settmp /work/clas12/users/$env(USER)/tmp ] } {
-            err "Could not find a /tmp replacement at any of:"
+        if {! [settmp /work/clas12/2users/$env(USER)/tmp ] } {
+            reportError "Could not find a /tmp replacement at any of:"
             puts stderr \t[join $failed \n\t]
             exit
         }

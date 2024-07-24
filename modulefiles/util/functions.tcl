@@ -1,16 +1,8 @@
 
-# get an environment variable, with a default if it doesn't exist:
-proc getenv {name default} {
-    if { [ info exists ::env($name) ] } {
-        return $::env($name)
-    }
-    return $default
-}
-
 # get the basename of the value of a path-like environment variable, which
 # will commonly be a version number, with a default of "$name":
 proc getvenv {name} {
-    return [ file tail [getenv $name \$$name] ] 
+    return [ file tail [getenv $name] ] 
 }
 
 # get the full, normlized path to the directory containing this tcl script:
@@ -29,22 +21,12 @@ proc osrelease {} {
     return [ exec [home]/modulefiles/util/osrelease.py ]
 }
 
-# print a colored error message:
-proc err {msg} {
-    puts stderr "\033\[1;31mERROR:\033\[0m $msg"
-}
-
-# print a colored warning message:
-proc warn {msg} {
-    puts stderr "\033\[1;33mWARNING:\033\[0m $msg"
-}
-
 # print a warning message if a path doesn't exist:
 proc warndir {path msg} {
     if [file isdirectory $path] {
         return 1
     } elseif [module-info mode load] {
-        warn $msg
+        reportWarning $msg
     }
     return 0
 }

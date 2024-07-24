@@ -17,8 +17,8 @@ foreach p $prefixes {
     }
 }
 if {$found == 0} {
-    warn "Password file for clas12writer could not be found at any of:"
-    warn [join $prefixes ,]
+    reportWarning "Password file for clas12writer could not be found at any of:"
+    reportWarning [join $prefixes ,]
     exit
 }
 

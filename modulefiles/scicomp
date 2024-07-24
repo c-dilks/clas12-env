@@ -20,11 +20,11 @@ if [dict exists $releases [osrelease]] {
     }
     if {[module-info mode display] || [module-info mode load]} {
         if {$success == 0} {
-            warn "cannot find JLab scicomp modules for $os at any of:"
-            warn [join $prefixes ,]
+            reportWarning "cannot find JLab scicomp modules for $os at any of:"
+            reportWarning [join $prefixes ,]
         }
     }
 } elseif {[module-info mode display] || [module-info mode load]} {
-    warn "[osrelease] is not supported by JLab scicomp."
+    reportWarning "[osrelease] is not supported by JLab scicomp."
 }
 
