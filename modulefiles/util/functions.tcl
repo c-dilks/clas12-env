@@ -13,7 +13,7 @@ proc home {} {
 
 # get the $OSRELEASE environment variable if it exists, else
 # run our script to get what it will become upon loading modules:
-# (Note, we don't use our getenv here for performance reasons.)
+# (Note, we don't use getenv here for performance reasons.)
 proc osrelease {} {
     if { [ info exists ::env(OSRELEASE) ] } {
         return $::env(OSRELEASE)
