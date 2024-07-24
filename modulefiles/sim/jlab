@@ -1,0 +1,8 @@
+#%Module1.0
+
+module-whatis initialize jlab geant4 modulefiles, https://jeffersonlab.github.io/g4home/
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+module use -a /scigroup/cvmfs/geant4/modules
+

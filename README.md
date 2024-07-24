@@ -54,8 +54,8 @@ Most modules here just update one's environment for a single, particular softwar
 * tmpfs
   * gets various software, e.g., [apptainer](https://apptainer.org), to use a `/tmp` alternative, e.g., for when it's mounted noexec
   * *Note, coatjava versions prior to [10.1.0](https://github.com/JeffersonLab/coatjava/releases/tag/10.1.0) require this on el9 at JLab for SQLite support*
-* geant4
-  * initializes [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`
+* sim
+  * initializes [modulefiles from JLab's geant4 group](https://jeffersonlab.github.io/g4home/), e.g. `gemc`
 * scicomp
   * initializes [modulefiles from JLab's scicomp group](https://jlab.servicenowservices.com/scicomp?id=kb_article_view&sysparm_article=KB0014671), e.g. `cernlib/2023`
 
