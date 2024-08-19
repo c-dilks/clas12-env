@@ -35,6 +35,8 @@ prereq_optional pymods/3.9
 prereq_optional rcdb/1.99.3
 prereq_optional util
 
+prereq_optional tmpfs
+
 # gemc:
 prereq_optional sim
 #prereq_optional gemc/dev
