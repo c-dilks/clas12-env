@@ -11,10 +11,10 @@ prereq_optional scicomp
 prereq_optional cernlib/2023
 
 # java:
-prereq_optional jdk/17.0.2
+prereq_optional jdk/21.0.2
 prereq_optional maven/3.9.0
 prereq_optional groovy/4.0.3
-prereq_optional coatjava/10.1.1
+prereq_optional coatjava/11.0.0
 prereq_optional ced/1.6.1
 prereq_optional mon12/7.8
 
@@ -28,7 +28,7 @@ prereq_optional hipo/4.1.0
 prereq_optional denoise/4.0.1
 prereq_optional iguana/0.7.1
 prereq_optional clas12root/1.8.4
-prereq_optional mcgen/3.10
+prereq_optional mcgen/3.12
 
 # python:
 prereq_optional pymods/3.9
