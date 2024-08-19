@@ -18,12 +18,11 @@ prereq_optional coatjava/10.1.1
 prereq_optional ced/1.6.1
 prereq_optional mon12/7.2
 
-# c+++:
+# c+++/python:
 prereq_optional cmake/3.29.0
 prereq_optional julia/1.10.2
-prereq_optional root/6.32.02
+prereq_optional root/6.30.04
 prereq_optional ccdb/1.99.3
-prereq_optional rcdb/1.99.3
 prereq_optional qadb/1.3.0
 prereq_optional hipo/4.1.0
 prereq_optional denoise/4.0.1
@@ -33,9 +32,11 @@ prereq_optional mcgen/3.10
 
 # python:
 prereq_optional python/3.12.4
+prereq_optional pymods/3.9
+prereq_optional rcdb/1.99.3
 prereq_optional util
 
 # gemc:
 prereq_optional sim
-prereq_optional gemc/dev
+#prereq_optional gemc/dev
 
