@@ -1,0 +1,11 @@
+#%Module1.0
+
+module-whatis https://github.com/jeffersonlab/clas12-qadb
+
+set version [file tail [module-info version [module-info name]]]
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+setenv QADB [home]/noarch/clas12-qadb/$version
+prepend-path JYPATH $env(QADB)/src
+
