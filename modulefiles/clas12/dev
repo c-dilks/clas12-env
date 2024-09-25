@@ -16,7 +16,7 @@ prereq_optional maven/3.9.0
 prereq_optional groovy/4.0.3
 prereq_optional coatjava/11.0.0
 prereq_optional ced/1.6.1
-prereq_optional mon12/7.9
+prereq_optional mon12/dev
 
 # c+++/python:
 prereq_optional cmake/3.29.0
