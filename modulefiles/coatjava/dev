@@ -1,0 +1,10 @@
+#%Module1.0
+
+prereq jdk/21.0.2
+
+set clara 5.0.2
+set coatjava [file tail [module-info version [module-info name]]]
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+source [file dirname $ModulesCurrentModulefile]/.common
+
