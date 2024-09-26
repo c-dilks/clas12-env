@@ -12,7 +12,7 @@ prereq_optional cernlib/2023
 
 # java:
 prereq_optional jdk/21.0.2
-prereq_optional maven/3.9.0
+prereq_optional maven/3.9.9
 prereq_optional groovy/4.0.3
 prereq_optional ced/1.6.1
 prereq_optional coatjava/dev
