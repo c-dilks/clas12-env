@@ -4,5 +4,7 @@ module-whatis https://github.com/jeffersonlab/mon12
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
+prereq coatjava
+
 prepend-path PATH [home]/noarch/mon12/$version/bin
 
