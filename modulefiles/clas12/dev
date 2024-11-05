@@ -24,7 +24,7 @@ prereq_optional julia/1.10.2
 prereq_optional root/6.30.04
 prereq_optional ccdb/dev
 prereq_optional qadb/2.0.0
-prereq_optional hipo/4.1.0
+prereq_optional hipo/4.2.0
 prereq_optional denoise/4.0.1
 prereq_optional iguana/0.7.1
 prereq_optional clas12root/1.8.4
