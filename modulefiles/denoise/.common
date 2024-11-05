@@ -9,5 +9,5 @@ set d [home]/[osrelease]/local/driftchambers/$version/[getvenv HIPO]
 warndir $d "denoise/$version is not available for hipo/[getvenv HIPO]"
 
 prepend-path PATH $d/bin
-setenv DENOISING_NETWORKS $d/share/denoising/network
+setenv DENOISING_NETWORKS $d/share/denoising
 
