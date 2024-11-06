@@ -1,7 +1,7 @@
 module-whatis https://github.com/gavalian/driftchambers
 
 prereq system
-prereq hipo
+prereq hipo@4.2.0
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
