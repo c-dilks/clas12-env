@@ -1,10 +1,4 @@
 
-# get the basename of the value of a path-like environment variable, which
-# will commonly be a version number, with a default of "$name":
-proc getvenv {name} {
-    return [ file tail [getenv $name] ] 
-}
-
 # get the full, normlized path to the directory containing this tcl script:
 proc home {} {
     set x [ dict get [info frame 0] file ]

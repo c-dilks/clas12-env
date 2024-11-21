@@ -7,9 +7,9 @@ source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 prereq system
 prereq_optional pymods
 
-set d [home]/[osrelease]/local/iguana/$version/[getvenv HIPO]
+set d [home]/[osrelease]/local/iguana/$version/[file tail [getenv HIPO]]
 
-warndir $d "iguana/$version is not available for hipo/[getvenv HIPO]"
+warndir $d "iguana/$version is not available for hipo/[file tail [getenv HIPO]]"
 
 setenv IGUANA $d
 prepend-path PATH $d/bin
