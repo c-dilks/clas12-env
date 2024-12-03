@@ -1,1 +1,11 @@
-../util/.generic
+#%Module1.0
+
+prereq hipo@4.1.0
+prereq qadb
+prereq iguana
+prereq ccdb
+
+set version [file tail [module-info version [module-info name]]]
+
+source [file dirname $ModulesCurrentModulefile]/.common
+

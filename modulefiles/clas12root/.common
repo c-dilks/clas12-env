@@ -1,12 +1,5 @@
 module-whatis https://github.com/jeffersonlab/clas12root
 
-prereq system
-
-prereq ccdb
-prereq qadb
-prereq hipo
-prereq root
-
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
 setenv CLAS12ROOT [home]/[osrelease]/local/clas12root/$version/[file tail [getenv HIPO]]
