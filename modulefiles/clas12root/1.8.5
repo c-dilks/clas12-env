@@ -1,0 +1,10 @@
+#%Module1.0
+
+prereq hipo/4.1.0
+prereq_optional qadb/3.0.0
+prereq_optional iguana/0.8.0
+
+set version [file tail [module-info version [module-info name]]]
+
+source [file dirname $ModulesCurrentModulefile]/.common
+
