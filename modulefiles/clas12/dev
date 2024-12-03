@@ -22,17 +22,17 @@ prereq_optional mon12/dev
 prereq_optional cmake/3.29.0
 prereq_optional julia/1.10.2
 prereq_optional root/6.30.04
-prereq_optional ccdb/dev
-prereq_optional qadb/2.0.0
-prereq_optional hipo/4.1.0
-prereq_optional denoise/4.0.1
-prereq_optional iguana/0.7.1
-prereq_optional clas12root/1.8.4
-prereq_optional mcgen/3.12
+prereq_optional ccdb/1.99.6
+prereq_optional qadb/3.0.0
+prereq_optional hipo/4.2.0
+prereq_optional denoise/4.2.0
+prereq_optional iguana/0.8.0
+prereq_optional clas12root/1.8.5
+prereq_optional mcgen/3.13
 
 # python:
 prereq_optional pymods/3.9
-prereq_optional rcdb/1.99.3
+prereq_optional rcdb/1.99.6
 prereq_optional util
 
 prereq_optional tmpfs
