@@ -1,11 +1,11 @@
 # clas12-env
 [![Build Status](https://github.com/jeffersonlab/clas12-env/workflows/clas12-env-ci/badge.svg)](https://github.com/jeffersonlab/clas12-env/actions)
 
-This is just a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  Its main branch is deployed on CVMFS to support running CLAS12 software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
+This is just a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software, used primarily at JLab and on the Open Science Grid.
 
 Note:
 - The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://jeffersonlab.github.io/g4home) and can be used independently.
-- This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (and Java components *should* still work).
+- This is *not* a build system!  If builds for your operating system or compiler aren't installed, these modulefiles will only print a warning.
 
 ## Quick Start
 
