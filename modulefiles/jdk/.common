@@ -1,0 +1,11 @@
+module-whatis https://openjdk.org/
+
+conflict jdk
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+if [warndir [home]/[osrelease]/jdk/$version/bin "Java is not available for [osrelease]"] {
+    setenv JAVA_HOME [home]/[osrelease]/jdk/$version
+    prepend-path PATH [home]/[osrelease]/jdk/$version/bin
+}
+

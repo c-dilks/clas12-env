@@ -1,15 +1,1 @@
-#%Module1.0
-
-module-whatis https://openjdk.org/
-
-conflict jdk
-
-set v 17.0.2
-
-source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
-
-if [warndir [home]/[osrelease]/jdk/$v/bin "Java is not available for [osrelease]"] {
-    setenv JAVA_HOME [home]/[osrelease]/jdk/$v
-    prepend-path PATH [home]/[osrelease]/jdk/$v/bin
-}
-
+../util/.generic
