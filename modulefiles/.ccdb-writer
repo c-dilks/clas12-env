@@ -5,8 +5,6 @@ module-whatis Set CCDB_CONNECTION for write access to clasdb (password read from
 set basename .clas12writer
 set prefixes [list {$HOME} /group/clas12/packages]
 
-source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
-
 set found 0
 foreach p $prefixes {
     set p [ expr { [string index $p 0] == {$} ? [getenv $p {}] : $p } ]
