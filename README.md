@@ -1,12 +1,11 @@
 # clas12-env
 [![Build Status](https://github.com/jeffersonlab/clas12-env/workflows/clas12-env-ci/badge.svg)](https://github.com/jeffersonlab/clas12-env/actions)
 
-This is a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software.  Its main branch is deployed on CVMFS to support running CLAS12 software at JLab, on the Open Science Grid, or on any supported operating system with CVMFS access.
+This is just a [modulefile](https://modules.sourceforge.net/)-based environment setup for CLAS12 software, used primarily at JLab and on the Open Science Grid.
 
 Note:
-- *The shell "setup.\*sh" files are deprecated, will be removed by 2025, and exist only temporarily for backward compatibility.*
-- This is *not* a build system!  If builds for a given operating system or compiler are not installed, these modulefiles will only print a warning (and Java components *should* still work).
-- The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://geant4.jlab.org/node/1) and can be used independently.
+- The modulefiles and software builds for GEANT4 used in this environment are [documented separately](https://jeffersonlab.github.io/g4home) and can be used independently.
+- This is *not* a build system!  If builds for your operating system or compiler aren't installed, these modulefiles will only print a warning.
 
 ## Quick Start
 
@@ -55,16 +54,16 @@ Most modules here just update one's environment for a single, particular softwar
 * tmpfs
   * gets various software, e.g., [apptainer](https://apptainer.org), to use a `/tmp` alternative, e.g., for when it's mounted noexec
   * *Note, coatjava versions prior to [10.1.0](https://github.com/JeffersonLab/coatjava/releases/tag/10.1.0) require this on el9 at JLab for SQLite support*
-* geant4
-  * initializes [modulefiles from JLab's geant4 group](https://geant4.jlab.org/node/1), e.g. `gemc`
+* sim
+  * initializes [modulefiles from JLab's geant4 group](https://jeffersonlab.github.io/g4home/), e.g. `gemc`
 * scicomp
   * initializes [modulefiles from JLab's scicomp group](https://jlab.servicenowservices.com/scicomp?id=kb_article_view&sysparm_article=KB0014671), e.g. `cernlib/2023`
 
 
 And these two modules below are required by many other clas12 modules to provide some 3rd-party dependencies:
 * system
-  * sets `OSRELEASE` based on the operating system (via [this script](modulefiles/util/osrelease.py))
-  * sets `CLAS12_HOME` (only for convenience)
+  * sets `OSRELEASE` based on the operating system, via [this script](modulefiles/util/osrelease.py) (only for convenience)
+  * sets `CLAS12_HOME` based on the filesystem location of these modulefiles (only for convenience)
   * sets `PATH`, `LD_LIBRARY_PATH`, and `PKG_CONFIG_PATH` for these C++ libraries:
     * [fmt](https://github.com/fmtlib/fmt)
     * [yaml-cpp](https://github.com/jbeder/yaml-cpp)
@@ -109,8 +108,8 @@ And an example subset of the contents of an "osrelease" subdirectory:
 ```
 
 ### Utilities
-The [`modulefiles/util`](modulefiles/util) directory contains both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and a container for some utilities only used during environment setup:
-- [`osrelease.py`](modulefiles/util/osrelease.py) (prints a string determined by the operating system and compiler, for defining installation paths)
-- [`functions.tcl`](modulefiles/util/functions.tcl) (helper Tcl procedures used in various modulefiles)
-- [`siteconfig.tcl`](modulefiles/util/siteconfig.tcl) (unused, a modulefile configuration for registering Tcl procedures)
-- [`.generic`](modulefiles/util/.generic) (determines a version number from a modulefile's filename and loads its `.common`)
+The [`modulefiles/util`](modulefiles/util) directory contains both a module for [clas12-utilities](https://github.com/jeffersonlab/clas12-utilities) and some scripts used only during environment setup:
+- [`osrelease.py`](modulefiles/util/osrelease.py) prints a string determined by the operating system and compiler, for defining installation paths
+- [`functions.tcl`](modulefiles/util/functions.tcl) helper Tcl procedures used in various modulefiles
+- [`siteconfig.tcl`](modulefiles/util/siteconfig.tcl) unused, a modulefile configuration for registering Tcl procedures
+- [`.generic`](modulefiles/util/.generic) determines a version number from a modulefile's filename and loads its `.common`

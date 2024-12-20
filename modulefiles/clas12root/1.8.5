@@ -1,5 +1,10 @@
 #%Module1.0
 
+prereq hipo@4.1.0,4.2.0
+prereq qadb@3.0.0
+prereq iguana@0.8.0
+prereq ccdb
+
 set version [file tail [module-info version [module-info name]]]
 
 source [file dirname $ModulesCurrentModulefile]/.common

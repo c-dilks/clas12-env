@@ -2,11 +2,11 @@
 
 module-whatis https://github.com/baltzell/clas12-workflow
 
+prereq jdk/17.0.2
 prereq ccdb
 prereq rcdb
 prereq root
 prereq coatjava
-prereq jdk
 prereq pymods
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl

@@ -7,7 +7,6 @@ source [file dirname $ModulesCurrentModulefile]/util/functions.tcl
 set failed {}
 
 proc settmp {tmpdir} {
-    global failed
     if { $tmpdir != "" } {
         if { [file writable [file dirname $tmpdir]] } {
             setenv TMPDIR $tmpdir
@@ -17,6 +16,8 @@ proc settmp {tmpdir} {
             append-path --delim " " MAVEN_OPTS -Djansi.tmpdir=$tmpdir/jansi.tmpdir
             append-path --delim " " JAVA_OPTS -Djava.io.tmpdir=$tmpdir/java.io.tmpdir
             append-path --delim " " JAVA_OPTS -Dorg.sqlite.tmpdir=$tmpdir/org.sqlite.tmpdir
+            append-path --delim " " _JAVA_OPTIONS -Djava.io.tmpdir=$tmpdir/java.io.tmpdir
+            append-path --delim " " _JAVA_OPTIONS -Dorg.sqlite.tmpdir=$tmpdir/org.sqlite.tmpdir
             if [module-info mode load] {
                 file mkdir $::env(APPTAINER_CACHEDIR) $::env(APPTAINER_TMPDIR)
                 file mkdir $::env(TMPDIR)/maven.m2 $::env(TMPDIR)/jansi.tmpdir
@@ -24,7 +25,7 @@ proc settmp {tmpdir} {
             }
             return 1
         }
-        lappend failed $tmpdir
+        lappend ::failed $tmpdir
     }
     return 0
 }
@@ -32,7 +33,7 @@ proc settmp {tmpdir} {
 if {! [settmp /scratch/$env(USER)/tmp] } {
     if {! [settmp [getenv SLURM_JOB_WORK_DIR {}]/tmp] } {
         if {! [settmp /work/clas12/users/$env(USER)/tmp ] } {
-            err "Could not find a /tmp replacement at any of:"
+            reportError "Could not find a /tmp replacement at any of:"
             puts stderr \t[join $failed \n\t]
             exit
         }

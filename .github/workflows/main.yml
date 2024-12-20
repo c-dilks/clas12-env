@@ -20,7 +20,7 @@ jobs:
           module --version
           module use ./modulefiles
           module avail
-          for x in ./modulefiles/*; do x=$(basename $x) && module load $x && module unload $x; done
+          for x in ./modulefiles/*; do x=$(basename $x) && module load $x && module list && module unload $x; done
       - name: test-cvmfs
         run: |
           . ./modules/init/bash

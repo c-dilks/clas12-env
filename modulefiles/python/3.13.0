@@ -6,7 +6,7 @@ conflict pymods
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
-set v 3.12.4
+set v 3.13.0
 set s [join [lrange [split $v .] 0 1] {.}]
 
 prepend-path PATH [home]/[osrelease]/local/python/$v/bin

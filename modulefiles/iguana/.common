@@ -1,15 +1,15 @@
 module-whatis https://github.com/jeffersonlab/iguana
 
-prereq system
-prereq --optional pymods
-
 conflict iguana
 
 source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
 
-set d [home]/[osrelease]/local/iguana/$version/[getvenv HIPO]
+prereq system
+prereq_optional pymods
 
-warndir $d "iguana/$version is not available for hipo/[getvenv HIPO]"
+set d [home]/[osrelease]/local/iguana/$version/[file tail [getenv HIPO]]
+
+warndir $d "iguana/$version is not available for hipo/[file tail [getenv HIPO]]"
 
 setenv IGUANA $d
 prepend-path PATH $d/bin

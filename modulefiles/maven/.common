@@ -1,0 +1,9 @@
+module-whatis https://maven.apache.org/
+
+conflict maven
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+setenv MAVEN_HOME [home]/noarch/maven/$version
+prepend-path PATH $env(MAVEN_HOME)/bin
+

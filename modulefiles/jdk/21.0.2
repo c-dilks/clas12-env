@@ -1,13 +1,1 @@
-#%Module1.0
-
-module-whatis https://openjdk.org/
-
-set v 21.0.2
-
-source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
-
-if [warndir [home]/[osrelease]/jdk/$v/bin "Java is not available for [osrelease]"] {
-    setenv JAVA_HOME [home]/[osrelease]/local/jdk/$v
-    prepend-path PATH [home]/[osrelease]/local/jdk/$v/bin
-}
-
+../util/.generic
