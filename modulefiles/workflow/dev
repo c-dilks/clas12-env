@@ -2,7 +2,7 @@
 
 module-whatis https://github.com/baltzell/clas12-workflow
 
-prereq jdk/17.0.2
+prereq jdk
 prereq ccdb
 prereq rcdb
 prereq root
