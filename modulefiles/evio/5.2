@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis https://github.com/JeffersonLab/evio
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+prepend-path PATH [home]/[osrelease]/local/evio/5.2/bin
+prepend-path LD_LIBRARY_PATH [home]/[osrelease]/local/evio/5.2/lib
+
