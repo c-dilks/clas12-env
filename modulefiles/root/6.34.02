@@ -1,0 +1,12 @@
+#%Module1.0
+
+module-whatis https://root.cern.ch
+
+conflict root
+
+setenv ROOTSYS /cvmfs/sft.cern.ch/lcg/app/releases/ROOT/6.34.02/x86_64-almalinux9.5-gcc115-opt
+
+prepend-path PATH $env(ROOTSYS)/bin
+prepend-path LD_LIBRARY_PATH $env(ROOTSYS)/lib
+prepend-path PYTHONPATH $env(ROOTSYS)/lib
+
