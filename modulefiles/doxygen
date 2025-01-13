@@ -1,0 +1,9 @@
+#%Module1.0
+
+module-whatis https://www.doxygen.nl
+
+source [file dirname $ModulesCurrentModulefile]/util/functions.tcl
+
+prepend-path PATH [home]/[osrelease]/local/doxygen/1.13.2/bin
+prepend-path MANPATH [home]/[osrelease]/local/doxygen/1.13.2/share
+
