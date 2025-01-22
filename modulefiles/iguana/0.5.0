@@ -1,6 +1,6 @@
 #%Module1.0
 
-prereq hipo@4.1.0,4.0.1
+prereq hipo@4.0.1:
 
 set version [file tail [module-info version [module-info name]]]
 source [file dirname $ModulesCurrentModulefile]/.common
