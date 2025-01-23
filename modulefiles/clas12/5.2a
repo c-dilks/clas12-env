@@ -1,0 +1,41 @@
+#%Module1.0
+
+module-whatis full clas12 environment, https://github.com/jeffersonlab/clas12-env
+
+source [file dirname $ModulesCurrentModulefile]/../util/functions.tcl
+
+prereq system
+
+# scicomp:
+prereq_optional scicomp
+prereq_optional cernlib/2023
+
+# java:
+prereq_optional jdk/21.0.2
+prereq_optional maven/3.9.9
+prereq_optional groovy/4.0.20
+prereq_optional ced/1.6.1
+prereq_optional coatjava/11.1.0
+prereq_optional mon12/7.10
+
+# c+++/python:
+prereq_optional cmake/3.29.0
+prereq_optional julia/1.10.2
+prereq_optional root/6.30.04
+prereq_optional ccdb/1.99.6
+prereq_optional qadb/3.0.0
+prereq_optional hipo/4.2.0
+prereq_optional denoise/4.2.0
+prereq_optional iguana/0.8.0
+prereq_optional clas12root/1.8.5
+prereq_optional mcgen/3.13
+
+# python:
+prereq_optional pymods/3.9
+prereq_optional rcdb/1.99.6
+prereq_optional util
+
+# gemc:
+prereq_optional sim
+prereq_optional gemc/5.11
+
