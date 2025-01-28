@@ -23,7 +23,7 @@ prereq_optional cmake/3.29.0
 prereq_optional julia/1.10.2
 prereq_optional root/6.30.04
 prereq_optional ccdb/1.99.6
-prereq_optional qadb/3.0.0
+prereq_optional qadb/3.1.0
 prereq_optional hipo/4.2.0
 prereq_optional denoise/4.2.0
 prereq_optional iguana/0.8.0
